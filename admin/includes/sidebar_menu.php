@@ -9,12 +9,12 @@
                 </a>
             </li>
             <li>
-                <a href="javascript:;"><i class="fa fa-edit"></i> Posts
+                <a href="javascript:;"><i class="fa fa-edit"></i> Labours
                     <span class="fa fa-chevron-down"></span>
                 </a>
                 <ul class="nav child_menu">
-                    <li><a href="posts.php">View All Posts</a></li>
-                    <li><a href="posts.php?source=add_post">Add Post</a></li>
+                    <li><a href="labours.php">View All Labours</a></li>
+                    <li><a href="labours.php?labour=add_labour">Add Labour</a></li>
                 </ul>
             </li>
             <li>
