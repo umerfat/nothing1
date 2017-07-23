@@ -9,18 +9,15 @@
     <meta name="description" content="">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700%7CRaleway:300,400,700%7CPlayfair+Display:700' rel='stylesheet'>
 
     <!-- Css -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/font-icons.css">
+    <link rel="stylesheet" href="css/sliders.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicons -->
-    <link rel="shortcut icon" href="img/favicon.ico">
 
 </head>
 
