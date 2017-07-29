@@ -4087,7 +4087,7 @@ table th {
 /*-------------------------------------------------------*/
 .product-item {
   margin-bottom: 40px;
-  border-bottom: 1px solid #ebebeb;
+  /*border-bottom: 1px solid #ebebeb;*/
   padding-bottom: 20px;
 }
 
