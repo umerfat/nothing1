@@ -7,6 +7,10 @@ function confirmQuery($result){
     }
 }
 
+function clean($string){
+    return htmlentities($string);
+}
+
 function redirect($location){
 
     header("Location: " . $location);
@@ -47,15 +51,15 @@ function add_labour(){
 
     global $connection;
     if (isset($_POST['create_labour'])){
-echo "string";
-        $labour_category_id  = $_POST['category'];
-        $labour_first_name   = $_POST['first_name'];
-        $labour_last_name    = $_POST['last_name'];
-        $labour_govt_id      = $_POST['govt_id'];
-        $labour_phone_number = $_POST['phone_number'];
-        $labour_address      = $_POST['address'];
-        $labour_email        = $_POST['email'];
-        $labour_status       = $_POST['status'];
+        $labour_category_id  = clean($_POST['category']);
+        $labour_first_name   = clean($_POST['first_name']);
+        $labour_last_name    = clean($_POST['last_name']);
+        $labour_govt_id      = clean($_POST['govt_id']);
+        $labour_phone_number = clean($_POST['phone_number']);
+        $labour_state        = clean($_POST['state']);
+        $labour_address      = clean($_POST['address']);
+        $labour_email        = clean($_POST['email']);
+        $labour_status       = clean($_POST['status']);
         $labour_date         = date("F j, Y");
         $labour_image        = $_FILES['image']['name'];
         $labour_tmp_image    = $_FILES['image']['tmp_name'];
@@ -65,8 +69,8 @@ echo "string";
 
         move_uploaded_file($labour_tmp_image, "../images/$labour_image");
 
-        $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
-        $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
+        $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
+        $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_state}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
 
         $insert_query = mysqli_query($connection, $query);
         if (!$insert_query){

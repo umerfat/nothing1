@@ -1,8 +1,12 @@
-<?php add_labour();  ?>
+<?php
+if (isset($_POST['create_labour'])) {
+    add_labour();
+}
+?>
 <form class="form-horizontal form-label-left" action="" id="add-post-admin" method="post"
       enctype="multipart/form-data">
       <div class="item form-group">
-          <label class="control-label col-md-2 col-sm-12 col-xs-12" for="FirstName">First Name <span class="required">*</span>
+          <label class="control-label col-md-2 col-sm-12 col-xs-12" for="FirstName">First Name <span class="required"><em>*</em></span>
           </label>
           <div class="col-md-10 col-sm-12 col-xs-12">
               <input id="FirstName" class="form-control col-md-7 col-xs-12"
@@ -10,7 +14,7 @@
           </div>
       </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="LastName">Last Name <span class="required">*</span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="LastName">Last Name <span class="required"><em>*</em></span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input id="LastName" class="form-control col-md-7 col-xs-12"
@@ -18,7 +22,7 @@
         </div>
     </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="GovtId">Govt. ID Proof<span class="required">*</span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="GovtId">Govt. ID Proof<span class="required"><em>*</em></span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input id="GovtId" class="form-control col-md-7 col-xs-12"
@@ -26,7 +30,7 @@
         </div>
     </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="PhoneNumber">Phone Number<span class="required">*</span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="PhoneNumber">Phone Number<span class="required"><em>*</em></span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input id="PhoneNumber" class="form-control col-md-7 col-xs-12"
@@ -34,7 +38,15 @@
         </div>
     </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="address">Address <span class="required">*</span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="state">State <span class="required"><em>*</em></span>
+        </label>
+        <div class="col-md-10 col-sm-12 col-xs-12">
+            <input type="text" id="state" name="state" class="form-control col-md-7
+            col-xs-12" placeholder="e.g Jammu And Kashmir" required>
+        </div>
+    </div>
+    <div class="item form-group">
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="address">Address <span class="required"><em>*</em></span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input type="text" id="address" name="address" class="form-control col-md-7
@@ -43,19 +55,23 @@
     </div>
     <div class="item form-group">
         <label class="control-label col-md-2 col-sm-12 col-xs-12" for="Email">Email
-        </label>
+        <span class="required"><em>*</em></span></label>
         <div class="col-md-10 col-sm-12 col-xs-12">
-            <input type="email" id="Email" name="user_email" class="form-control col-md-7
+            <input type="email" id="Email" name="email" class="form-control col-md-7
             col-xs-12" placeholder="e.g vakadu10@gmail.com" required>
         </div>
     </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="category">Category <span class="required">*</span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="category">Category <span class="required"><em>*</em></span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <select class="form-control" name="category" required>
                 <option value="">Choose Category</option>
-                <?php add_labour_category()?>
+                <?php 
+                if (isset($_POST['create_labour'])) {
+                    add_labour_category();
+                }
+                ?>
             </select>
         </div>
     </div>
@@ -71,7 +87,7 @@
 
     <div class="item form-group">
         <label class="control-label col-md-2 col-sm-12 col-xs-12" for="status">Status
-        </label>
+        <span class="required"><em>*</em></span></label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <select class="form-control" name="status">
                 <option value="draft">Select Status</option>
