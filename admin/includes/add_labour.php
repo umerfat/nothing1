@@ -3,10 +3,10 @@ if (isset($_POST['create_labour'])) {
     add_labour();
 }
 ?>
-<form class="form-horizontal form-label-left" action="" id="add-post-admin" method="post"
+<form class="form-horizontal form-label-left" action="" id="add-labour-admin" method="post"
       enctype="multipart/form-data">
-      <div class="item form-group">
-          <label class="control-label col-md-2 col-sm-12 col-xs-12" for="FirstName">First Name <span class="required"><em>*</em></span>
+      <div class="items form-group">
+          <label class="control-label col-md-2 col-sm-12 col-xs-12" for="FirstName">First Name <span class="required">*</span>
           </label>
           <div class="col-md-10 col-sm-12 col-xs-12">
               <input id="FirstName" class="form-control col-md-7 col-xs-12"
@@ -18,11 +18,11 @@ if (isset($_POST['create_labour'])) {
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input id="LastName" class="form-control col-md-7 col-xs-12"
-                   name="last_name" placeholder="e.g Hurrah" type="text" required>
+                   name="last_name" placeholder="e.g Hurrah" type="text" required />
         </div>
     </div>
     <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="GovtId">Govt. ID Proof<span class="required"><em>*</em></span>
+        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="GovtId">Govt. ID Proof<span class="required">*</span>
         </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
             <input id="GovtId" class="form-control col-md-7 col-xs-12"
@@ -67,11 +67,7 @@ if (isset($_POST['create_labour'])) {
         <div class="col-md-10 col-sm-12 col-xs-12">
             <select class="form-control" name="category" required>
                 <option value="">Choose Category</option>
-                <?php 
-                if (isset($_POST['create_labour'])) {
-                    add_labour_category();
-                }
-                ?>
+                <?php add_labour_category();?>
             </select>
         </div>
     </div>

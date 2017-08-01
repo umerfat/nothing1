@@ -45,7 +45,7 @@
 
         echo "<tr>";
         echo "<td>{$labour_id}</td>";
-         echo "<td><img src='../images/{$labour_image}' height='40px'></td>";
+         echo "<td><img src='../LABOUR_IMAGES/{$labour_image}' height='40px'></td>";
         echo "<td>{$labour_first_name}</td>";
         echo "<td>{$labour_last_name}</td>";
         //echo "<td class='col-sm-1'>{$post_title}</td>";

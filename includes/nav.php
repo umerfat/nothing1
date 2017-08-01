@@ -202,7 +202,11 @@
                             <li class="mobile-links">
                                 <ul>
                                     <li>
+<<<<<<< HEAD
                                         <a href="#">Login</a>
+=======
+                                        <a href="login.php">Login</a>
+>>>>>>> 0b4e6aac186858f4b18c8900c67d1b7e57d371ca
                                     </li>
                                     <li>
                                         <a href="#">My Account</a>

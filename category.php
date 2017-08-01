@@ -7,7 +7,6 @@
                 <?php
 
                 if (isset($_GET['category'])){
-
                     $post_category = $_GET['category'];
                 }
 

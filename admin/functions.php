@@ -65,14 +65,31 @@ function add_labour(){
         $labour_tmp_image    = $_FILES['image']['tmp_name'];
         // $labour_content      = $_POST['content'];
         // $labour_content      = str_replace("'", "''", $post_content);
-        $labour_comment_count = 0;
+        move_uploaded_file($labour_tmp_image, "../LABOUR_IMAGES/$labour_image");
 
-        move_uploaded_file($labour_tmp_image, "../images/$labour_image");
+        // $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
+        // $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_state}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
 
+        // $insert_query = mysqli_query($connection, $query);
+        // if (!$insert_query){
+
+        //     die("Query failed " . mysqli_error($connection));
+        // }
+        // else{
+        //     echo "
+        //     <div class='col-md-12 col-xs-12'>
+        //       <div class='alert alert-success alert-dismissable fade in'>
+        //         <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;                 </a>
+        //         <strong>New labour {$labour_first_name} {$labour_last_name} created!</strong>
+        //       </div>
+        //     </div>
+        //     ";
+        // }
         $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
-        $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_state}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
-
-        $insert_query = mysqli_query($connection, $query);
+        $query .= "VALUES(?, ?, ?, ?,?,?,?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "issssssssss", $labour_category_id, $labour_first_name, $labour_last_name, $labour_govt_id, $labour_phone_number, $labour_state, $labour_address, $labour_email, $labour_status, $labour_date, $labour_image);
+        $insert_query = mysqli_stmt_execute($stmt);
         if (!$insert_query){
 
             die("Query failed " . mysqli_error($connection));
@@ -101,8 +118,58 @@ function add_labour_category(){
     }
     while ($row = mysqli_fetch_assoc($category_query)){
 
-        $cat_id = $row['cat_id'];
+        $cat_id   = $row['cat_id'];
         $cat_name = $row['cat_name'];
         echo "<option value='{$cat_id}'>{$cat_name}</option>";
     }
 }
+
+function escape($string){
+    global $connection;
+    return mysqli_real_escape_string($connection,$string);
+}
+function login_user(){
+    global $connection;
+    if (isset($_POST['lb_user_login'])){
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $username = escape($username);
+        $password = escape($password);
+
+        $query = "SELECT * FROM users WHERE username = '{$username}'";
+        $select_query = mysqli_query($connection, $query);
+        if (!$select_query){
+            die("Failed " . mysqli_error($connection));
+        }
+        while ($row = mysqli_fetch_assoc($select_query)){
+
+            $db_id              = $row['user_id'];
+            $db_username        = $row['username'];
+            $db_password        = $row['user_password'];
+            $db_user_firstname  = $row['user_firstname'];
+            $db_user_lastname   = $row['user_lastname'];
+            $db_role            = $row['user_role'];
+        }
+        if ($username !== $db_username && $password !== $db_password){
+
+            redirect("index.php");
+        }
+        elseif (password_verify($password, $db_password)){
+
+            $_SESSION['username'] = $db_username;
+            $_SESSION['firstname'] = $db_user_firstname;
+            $_SESSION['lastname'] = $db_user_lastname;
+            $_SESSION['user_role'] = $db_role;
+            redirect("admin/index.php");
+        }
+        else{
+
+            redirect("index.php");
+        }
+
+//    login_user($_POST['username'], $_POST['password']);
+    }
+}
+
