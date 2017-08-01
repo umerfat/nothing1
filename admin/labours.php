@@ -34,7 +34,7 @@
                                 include "includes/add_labour.php";
                                 break;
 
-                            case 'edit_post':
+                            case 'edit_labour':
                                 include "includes/edit_labour.php";
                                 break;
 

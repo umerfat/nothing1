@@ -28,11 +28,11 @@
 
                             </a>
                             <div class="product-actions">
-                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                <a href="product.php" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -62,7 +62,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -89,7 +89,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -119,7 +119,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -150,7 +150,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -180,7 +180,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -207,7 +207,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
@@ -237,7 +237,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="#" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">

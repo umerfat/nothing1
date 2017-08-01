@@ -1,3 +1,5 @@
+<?php include "admin/includes/database.php";?>
+<?php include "admin/functions.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,8 @@
+<?php
+//make database and function files global to all
+include "database.php";
+include "functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <title>Kwiqpick - Blog | Admin</title>
+    <title>Labour  Ease | Home</title>
+    <link rel="icon" type="image/png" href="../images/labour.png">
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -41,6 +47,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
