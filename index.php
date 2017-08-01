@@ -4,69 +4,261 @@
 
 <?php include "includes/nav.php"; ?>
 
-<!-- Page Title -->
-<section class="page-title text-center">
-    <div class="container relative clearfix">
-        <div class="title-holder">
-            <div class="title-text">
-                <h1 class="uppercase">My Account</h1>
-            </div>
-        </div>
-    </div>
-</section> <!-- end page title -->
+<?php include "includes/slider.php"; ?>
 
-<!-- login -->
-<section class="section-wrap login-register pt-0 pb-40">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-5 col-sm-offset-1 mb-40">
-            <?php 
-            if (isset($_POST['lb_user_login'])) {
-                login_user();
-            }
-            ?>
-                <div class="login">
-                    <h4 class="uppercase">login</h4>
-                    <form method="POST">
-                        <p class="form-row form-row-wide">
-                            <label>username or email
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="text" class="input-text" name = "username" placeholder="username" value="">
-                        </p>
-                        <p class="form-row form-row-wide">
-                            <label>password
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="password" class="input-text" name="password" placeholder="password" value="">
-                        </p>
-                        <input type="submit" value="Login" name = "lb_user_login" class="btn">
-                        <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
-                        <label for="remember" class="checkbox">Remember me</label>
-                        <a href="#">Lost Password?</a>
-                    </form>
+    <!-- Best Labours -->
+    <section class="section-wrap pb-0">
+        <div class="container">
+
+            <div class="row heading-row">
+                <div class="col-md-12 text-center">
+                    <h2 class="heading uppercase">
+                        <small>Best Labours</small>
+                    </h2>
                 </div>
             </div>
-            <div class="col-sm-5">
-                <div class="register">
-                    <h4 class="uppercase">Register</h4>
-                    <p class="form-row form-row-wide">
-                        <label>email
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="" value="">
-                    </p>
-                    <p class="form-row form-row-wide">
-                        <label>password
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="" value="">
-                    </p>
-                    <input type="submit" value="Register" class="btn">
+
+            <div class="row row-10">
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item1.jpeg" alt="">
+
+                            </a>
+                            <div class="product-actions">
+                                <a href="product.php" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="#">Albert</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.33,000</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item2.jpeg" alt="">
+                            </a>
+                            <div class="product-label">
+                                <span class="sale">sale</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Jose</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.45,000</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item3.jpeg" alt="">
+                            </a>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Maroon Kale</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.25,450</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item4.jpeg" alt="">
+                            </a>
+                            <div class="product-label">
+                                <span class="sale">sale</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Sita</a>
+                            </h3>
+                            <span class="price">
+                              <del>
+                                <span>Rs.52,000</span>
+                              </del>
+                              <ins>
+                                <span class="ammount">Rs.22,00</span>
+                              </ins>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item1.jpeg" alt="">
+
+                            </a>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="#">Albert</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.33,000</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item2.jpeg" alt="">
+                            </a>
+                            <div class="product-label">
+                                <span class="sale">sale</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Jose</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.45,000</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item3.jpeg" alt="">
+                            </a>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Maroon Kale</a>
+                            </h3>
+                            <span class="price">
+                              <ins>
+                                <span class="ammount">Rs.25,450</span>
+                              </ins>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-xs-6 animated-from-left">
+                    <div class="product-item">
+                        <div class="product-img">
+                            <a href="#">
+                                <img src="img/shop/item4.jpeg" alt="">
+                            </a>
+                            <div class="product-label">
+                                <span class="sale">sale</span>
+                            </div>
+                            <div class="product-actions">
+                                <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </div>
+                            <a href="#" class="product-quickview">Quick View</a>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>
+                                <a class="product-title" href="">Sita</a>
+                            </h3>
+                            <span class="price">
+                              <del>
+                                <span>Rs.52,000</span>
+                              </del>
+                              <ins>
+                                <span class="ammount">Rs.22,00</span>
+                              </ins>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div> <!-- end row -->
         </div>
-    </div>
-</section> <!-- end login -->
+    </section> <!-- end best labours -->
 
 <?php include "includes/footer.php"; ?>
