@@ -1,130 +1,39 @@
 <?php include "includes/header.php"; ?>
 
-<?php include "includes/side_top.php"; ?>
-
-<?php include "includes/sidebar_menu.php"; ?>
-
-<?php include "includes/top_nav.php"; ?>
-
-<!-- page content -->
-<div class="right_col" role="main">
-    <div class="">
-        <div class="page-title">
-            <div class="title_left">
-                <h3>Dashboard</h3>
-            </div>
-        </div>
-        <div class="clearfix"></div>
+<!-- Page Title -->
+<!-- login -->
+<section class="section-wrap login-register pt-0 pb-40">
+    <div class="container">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                    <div class="x_content">
-                    <div class="row top_tiles">
-                        <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-edit"></i></div>
-
-                                <?php
-                                $labour_count = recordCount('labour');
-                                echo "<div class='count'>{$labour_count}</div>";
-                                ?>
-                                <h3>Labours</h3>
-                                <?php
-                                $query = "SELECT * FROM labour WHERE labour_status = 'publish'";
-                                $select_query = mysqli_query($connection, $query);
-                                $publish_count = mysqli_num_rows($select_query);
-                                echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$publish_count} </i>&nbsp; Labours Available</span>";
-                                ?>
-                                <br>
-                                <?php
-                                $query = "SELECT * FROM labour WHERE labour_status = 'draft'";
-                                $select_query = mysqli_query($connection, $query);
-                                $count = mysqli_num_rows($select_query);
-                                echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Labours Unavailable</span>";
-                                ?>
-                            </div>
-                        </div>
-
-                        <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-users"></i></div>
-                                <?php
-                                $user_count = recordCount('users');
-                                echo "<div class='count'>{$user_count}</div>";
-                                ?>
-                                <h3>Users</h3>
-                                <?php
-                                $query = "SELECT * FROM users WHERE user_role = 'admin'";
-                                $select_query = mysqli_query($connection, $query);
-                                $count = mysqli_num_rows($select_query);
-                                echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Admins</span>";
-                                ?>
-                                <br>
-                                <?php
-                                $query = "SELECT * FROM users WHERE user_role = 'subscriber'";
-                                $select_query = mysqli_query($connection, $query);
-                                $count = mysqli_num_rows($select_query);
-                                echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Staff</span>";
-                                ?>
-                            </div>
-                        </div>
-                        <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-comments-o"></i></div>
-                                <?php
-                                //$count = recordCount('comments');
-                                //echo "<div class='count'>{$count}</div>";
-                                ?>
-                                <div class='count'>300</div>
-                                <h3>Customers</h3>
-                                <?php
-                                //$query = "SELECT * FROM comments WHERE comment_status = 'approved'";
-                                //$select_query = mysqli_query($connection, $query);
-                                //$count = mysqli_num_rows($select_query);
-                                //echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Comments Approved</span>";
-                                ?>
-                                <span class='count_bottom'><i class='green'>&nbsp;&nbsp;200 </i>&nbsp; Comments Approved</span>
-                                <br>
-                                <?php
-                                //$query = "SELECT * FROM comments WHERE comment_status = 'unapproved'";
-                                //$select_query = mysqli_query($connection, $query);
-                                //$count = mysqli_num_rows($select_query);
-                                //echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Comments for Review</span>";
-                                ?>
-                                <span class='count_bottom'><i class='green'>&nbsp;&nbsp;101 </i>&nbsp; Comments for Review</span>
-                            </div>
-                        </div>
-                        <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="tile-stats">
-                                <div class="icon"><i class="fa fa-folder-o"></i></div>
-                                <?php
-                                $category_count = recordCount('categories');
-                                echo "<div class='count'>{$category_count}</div>";
-                                ?>
-                                <h3>Categories</h3>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                            <div class="tile-stats">
-                                <div class="icon"><i class="fa fa fa-envelope"></i></div>
-                                <?php
-                                //$subscriber_count = recordCount('subscribers');
-                                //echo "<div class='count'>{$subscriber_count}</div>";
-                                ?>
-                                <div class='count'>100</div>
-                                <h3>Subscribers</h3>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
+            <div class="col-sm-5 col-sm-offset-1 mb-40">
+            <?php 
+            if (isset($_POST['lb_user_login'])) {
+                login_user();
+            }
+            ?>
+                <div class="login">
+                    <h4 class="uppercase">login</h4>
+                    <form method="POST">
+                        <p class="form-row form-row-wide">
+                            <label>username or email
+                                <abbr class="required" title="required">*</abbr>
+                            </label>
+                            <input type="text" class="input-text" name = "username" placeholder="username" value="">
+                        </p>
+                        <p class="form-row form-row-wide">
+                            <label>password
+                                <abbr class="required" title="required">*</abbr>
+                            </label>
+                            <input type="password" class="input-text" name="password" placeholder="password" value="">
+                        </p>
+                        <input type="submit" value="Login" name = "lb_user_login" class="btn">
+                        <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
+                        <label for="remember" class="checkbox">Remember me</label>
+                        <a href="#">Lost Password?</a>
+                    </form>
                 </div>
             </div>
-        </div>
     </div>
-</div>
+</section> <!-- end login -->
 
 <?php include "includes/footer.php"; ?>

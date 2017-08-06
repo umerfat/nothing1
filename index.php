@@ -23,8 +23,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item1.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item1.jpeg" alt="">
 
                             </a>
                             <div class="product-actions">
@@ -51,8 +51,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item2.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item2.jpeg" alt="">
                             </a>
                             <div class="product-label">
                                 <span class="sale">sale</span>
@@ -81,8 +81,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item3.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item3.jpeg" alt="">
                             </a>
                             <div class="product-actions">
                                 <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
@@ -108,8 +108,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item4.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item4.jpeg" alt="">
                             </a>
                             <div class="product-label">
                                 <span class="sale">sale</span>
@@ -141,8 +141,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item1.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item1.jpeg" alt="">
 
                             </a>
                             <div class="product-actions">
@@ -169,8 +169,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item2.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item2.jpeg" alt="">
                             </a>
                             <div class="product-label">
                                 <span class="sale">sale</span>
@@ -199,8 +199,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item3.jpeg" alt="">
+                            <a href="product.php">
+                                <img src="IMAGES/shop/item3.jpeg" alt="">
                             </a>
                             <div class="product-actions">
                                 <a href="#" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
@@ -226,8 +226,8 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
-                                <img src="img/shop/item4.jpeg" alt="">
+                            <a href="">
+                                <img src="IMAGES/shop/item4.jpeg" alt="">
                             </a>
                             <div class="product-label">
                                 <span class="sale">sale</span>

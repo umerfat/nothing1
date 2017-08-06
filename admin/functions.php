@@ -152,21 +152,17 @@ function login_user(){
             $db_user_lastname   = $row['user_lastname'];
             $db_role            = $row['user_role'];
         }
-        if ($username !== $db_username && $password !== $db_password){
+        if ($username == $db_username && password_verify($password, $db_password)){
 
-            redirect("index.php");
-        }
-        elseif (password_verify($password, $db_password)){
-
-            $_SESSION['username'] = $db_username;
-            $_SESSION['firstname'] = $db_user_firstname;
-            $_SESSION['lastname'] = $db_user_lastname;
-            $_SESSION['user_role'] = $db_role;
-            redirect("admin/index.php");
+            $_SESSION['admin_username']  = $db_username;
+            $_SESSION['admin_firstname'] = $db_user_firstname;
+            $_SESSION['admin_lastname']  = $db_user_lastname;
+            $_SESSION['admin_user_role'] = $db_role;
+            redirect("dashboard.php");   
         }
         else{
-
-            redirect("index.php");
+            echo validation_errors("Username or Password Wrong. Please try again.");
+            return false;
         }
     }
 }
@@ -289,6 +285,59 @@ function add_user(){
               </div>
             </div>
             ";
+        }
+    }
+}
+
+function update_user_profile(){
+
+    global $connection;
+    if (isset($_POST['update_profile'])) {
+
+        $user_firstname = $_POST['first_name'];
+        $user_lastname = $_POST['last_name'];
+        $username = $_POST['username'];
+        $user_image = $_FILES['user_image']['name'];
+        $user_tmp_image = $_FILES['user_image']['tmp_name'];
+        $user_role = $_POST['role'];
+        $user_email = $_POST['user_email'];
+        $user_password = $_POST['user_password'];
+        //$user_password = password_hash($user_password, PASSWORD_BCRYPT);
+
+        move_uploaded_file($user_tmp_image, "../USER_IMAGE/$user_image");
+
+        if (empty($user_image)) {
+            $query = "SELECT * FROM users WHERE username = '{$username}'";
+            $select_image = mysqli_query($connection, $query);
+            while ($row = mysqli_fetch_array($select_image)) {
+                $user_image = $row['user_image'];
+            }
+        }
+
+        $query = "UPDATE users SET ";
+        $query .= "user_firstname = '{$user_firstname}', ";
+        $query .= "user_lastname = '{$user_lastname}', ";
+        $query .= "username = '{$username}', ";
+        $query .= "user_image = '{$user_image}', ";
+        $query .= "user_role = '{$user_role}', ";
+        $query .= "user_email = '{$user_email}', ";
+        $query .= "user_password = '{$user_password}' ";
+        $query .= "WHERE username = '{$username}'";
+
+        $update_query = mysqli_query($connection, $query);
+        if (!$update_query) {
+
+            die("Query failed " . mysqli_error($connection));
+        } else {
+            echo "
+                        <div class='col-md-12 col-xs-12'>
+                            <div class='alert alert-success alert-dismissable fade in'>
+                                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;                 
+                                </a>
+                                <strong>{$username} has updated!</strong>
+                            </div>
+                        </div>
+                        ";
         }
     }
 }

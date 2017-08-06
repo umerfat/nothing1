@@ -39,7 +39,7 @@
                 $user_role = $row['user_role'];
 
 
-                if ($username == $_SESSION['username'] && $_SESSION['user_role'] == 'Admin'){
+                if ($username == $_SESSION['admin_username'] && $_SESSION['admin_user_role'] == 'Admin'){
 
                     echo "<li>
                             <a href='javascript:;'><i class='fa fa-users'></i> Users

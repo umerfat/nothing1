@@ -45,7 +45,7 @@
             <select class="form-control" name="role" required>
                 <option value="Subscriber">Select Status</option>
                 <option value="Admin">Admin</option>
-                <option value="Subscriber">Subscriber</option>
+                <option value="Staff">Staff</option>
             </select>
         </div>
     </div>

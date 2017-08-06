@@ -9,7 +9,7 @@
                         <h5 class="widget-title uppercase">Information</h5>
                         <ul class="list-no-dividers">
                             <li><a href="#">Our stores</a></li>
-                            <li><a href="#">About us</a></li>
+                            <li><a href="about-us.php">About us</a></li>
                             <li><a href="#">Business with us</a></li>
                             <li><a href="#">Delivery information</a></li>
                             <li><a href="#">Terms &amp; Conditions</a></li>
@@ -21,9 +21,9 @@
                     <div class="widget footer-links">
                         <h5 class="widget-title uppercase">Help</h5>
                         <ul class="list-no-dividers">
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="contact.php">Contact us</a></li>
                             <li><a href="#">Track order</a></li>
-                            <li><a href="#">F.A.Q</a></li>
+                            <li><a href="faq.php">F.A.Q</a></li>
                             <li><a href="#">Privacy policy</a></li>
                             <li><a href="#">Returns</a></li>
                         </ul>

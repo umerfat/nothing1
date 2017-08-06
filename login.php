@@ -27,7 +27,7 @@
             ?>
                 <div class="login">
                     <h4 class="uppercase">login</h4>
-                    <form method="POST">
+                    <form method="POST" role ="form" id="customer_login_id">
                         <p class="form-row form-row-wide">
                             <label>username or email
                                 <abbr class="required" title="required">*</abbr>
@@ -50,19 +50,28 @@
             <div class="col-sm-5">
                 <div class="register">
                     <h4 class="uppercase">Register</h4>
-                    <p class="form-row form-row-wide">
-                        <label>email
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="" value="">
-                    </p>
-                    <p class="form-row form-row-wide">
-                        <label>password
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="" value="">
-                    </p>
-                    <input type="submit" value="Register" class="btn">
+                    <form method="POST" role="form" id ="customer_register_id" style="display: block;">
+                        <p class="form-row form-row-wide">
+                            <label>email
+                                <abbr class="required" title="required">*</abbr>
+                            </label>
+                            <input type="text" class="input-text" placeholder="E.g your email id" value="" name="cus_email">
+                        </p>
+                        <p class="form-row form-row-wide">
+                            <label>phone
+                                <abbr class="required" title="required">*</abbr>
+                            </label>
+                            <input type="text" class="input-text" placeholder="E.g phone number" value="" name = "cus_phone-no">
+                        </p>
+                        <p class="form-row form-row-wide">
+                            <label>password
+                                <abbr class="required" title="required">*</abbr>
+                            </label>
+                            <input type="text" class="input-text" placeholder="Password" value="" name="cus_password">
+                        </p>
+                        <input type="submit" value="Register" class="btn" name="lb_cus_registration">
+                    </form>
+                </div>
         </div>
     </div>
 </section> <!-- end login -->
