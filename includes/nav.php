@@ -190,23 +190,17 @@
                             </li> <!-- end categories -->
 
                             <li class="dropdown">
-                                <a href="#">Shop</a>
-                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
-                                <ul class="dropdown-menu">
-                                    <li><a href="">Single Product</a></li>
-                                    <li><a href="">Cart</a></li>
-                                    <li><a href="">Checkout</a></li>
-                                </ul>
+                                <a href="about-us.php">About Us</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="contact.php">Contact</a>
                             </li>
 
                             <li class="mobile-links">
                                 <ul>
                                     <li>
-<<<<<<< HEAD
-                                        <a href="#">Login</a>
-=======
                                         <a href="login.php">Login</a>
->>>>>>> 0b4e6aac186858f4b18c8900c67d1b7e57d371ca
                                     </li>
                                     <li>
                                         <a href="#">My Account</a>
