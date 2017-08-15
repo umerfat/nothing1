@@ -81,7 +81,7 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="#">
+                            <a href="product.php">
                                 <img src="img/shop/item3.jpeg" alt="">
                             </a>
                             <div class="product-actions">
@@ -89,12 +89,12 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="#" class="product-quickview">Quick View</a>
+                            <a href="product.php" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
                             <h3>
-                                <a class="product-title" href="">Maroon Kale</a>
+                                <a class="product-title" href="product.php">Maroon Kale</a>
                             </h3>
                             <span class="price">
                               <ins>

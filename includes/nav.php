@@ -51,67 +51,11 @@
                                         <a href="#" class="nav-cart-icon">2</a>
                                     </div>
                                 </div>
-                                <div class="nav-cart-container">
-                                    <div class="nav-cart-items">
-
-                                        <div class="nav-cart-item clearfix">
-                                            <div class="nav-cart-img">
-                                                <a href="#">
-                                                    <img src="" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="nav-cart-title">
-                                                <a href="#">
-                                                    Ladies Bag
-                                                </a>
-                                                <div class="nav-cart-price">
-                                                    <span>1 x</span>
-                                                    <span>1250.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="nav-cart-remove">
-                                                <a href="#"><i class="icon icon_close"></i></a>
-                                            </div>
-                                        </div>
-
-                                        <div class="nav-cart-item clearfix">
-                                            <div class="nav-cart-img">
-                                                <a href="#">
-                                                    <img src="" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="nav-cart-title">
-                                                <a href="#">
-                                                    Sequin Suit longer title
-                                                </a>
-                                                <div class="nav-cart-price">
-                                                    <span>1 x</span>
-                                                    <span>1250.00</span>
-                                                </div>
-                                            </div>
-                                            <div class="nav-cart-remove">
-                                                <a href="#"><i class="icon icon_close"></i></a>
-                                            </div>
-                                        </div>
-
-                                    </div> <!-- end cart items -->
-
-                                    <div class="nav-cart-summary">
-                                        <span>Cart Subtotal</span>
-                                        <span class="total-price">$1799.00</span>
-                                    </div>
-
-                                    <div class="nav-cart-actions mt-20">
-                                        <a href="" class="btn btn-md btn-dark"><span>View Cart</span></a>
-                                        <a href="" class="btn btn-md btn-color mt-10"><span>Proceed to Checkout</span></a>
-                                    </div>
-                                </div>
                             </div>
                             <div class="menu-cart-amount right">
-                      <span>
-                        Cart /
-                        <a href="#"> $1299.50</a>
-                      </span>
+                            <span>
+                                Cart
+                            </span>
                             </div>
                         </div> <!-- end cart -->
 
