@@ -43,6 +43,15 @@
                             </form>
                         </div>
 
+                        <!-- Wishlist -->
+                        <div class="nav-cart-wrap hidden-sm hidden-xs">
+                            <div class="nav-cart right">
+                                <div class="nav-wishlist">
+                                    <a href="#">Wishlist <i class="fa fa-heart"></i> </a>
+                                </div>
+                            </div>
+                        </div> <!-- end cart -->
+
                         <!-- Cart -->
                         <div class="nav-cart-wrap hidden-sm hidden-xs">
                             <div class="nav-cart right">
@@ -51,11 +60,6 @@
                                         <a href="#" class="nav-cart-icon">2</a>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="menu-cart-amount right">
-                            <span>
-                                Cart
-                            </span>
                             </div>
                         </div> <!-- end cart -->
 
@@ -139,6 +143,15 @@
 
                             <li class="dropdown">
                                 <a href="contact.php">Contact</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#">My Account</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Login</a></li>
+                                    <li><a href="">Sign Up</a></li>
+                                </ul>
                             </li>
 
                             <li class="mobile-links">

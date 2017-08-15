@@ -19,19 +19,6 @@
 
                 <div class="col-md-2 col-sm-4 col-xs-4 col-xxs-12">
                     <div class="widget footer-links">
-                        <h5 class="widget-title uppercase">Help</h5>
-                        <ul class="list-no-dividers">
-                            <li><a href="contact.php">Contact us</a></li>
-                            <li><a href="#">Track order</a></li>
-                            <li><a href="faq.php">F.A.Q</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Returns</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-2 col-sm-4 col-xs-4 col-xxs-12">
-                    <div class="widget footer-links">
                         <h5 class="widget-title uppercase">Account</h5>
                         <ul class="list-no-dividers">
                             <li><a href="#">My account</a></li>
@@ -40,13 +27,6 @@
                             <li><a href="#">Special gifts</a></li>
                             <li><a href="#">Track order</a></li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="widget">
-                        <h5 class="widget-title uppercase">about us</h5>
-                        <p class="mb-0">It's no longer just the privilege of a metro city or an urban area to shop online for their favorite products. Flipkart is one online shopping site that has made it possible for consumers even in the remote areas of India to avail products from the best brands at low prices online.</p>
                     </div>
                 </div>
 
@@ -61,10 +41,23 @@
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-google-plus"></i></a>
                             <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-vimeo"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
                 </div> <!-- end stay in touch -->
+
+                <div class="col-md-2 col-sm-4 col-xs-4 col-xxs-12">
+                    <div class="widget footer-links">
+                        <h5 class="widget-title uppercase">Help</h5>
+                        <ul class="list-no-dividers">
+                            <li><a href="contact.php">Contact us</a></li>
+                            <li><a href="#">Track order</a></li>
+                            <li><a href="faq.php">F.A.Q</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Returns</a></li>
+                        </ul>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -73,13 +66,15 @@
     <div class="bottom-footer bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-sm-4 copyright sm-text-center">
+                <div class="col-sm-7 copyright sm-text-center">
               <span>
                 &copy; 2017 Designed by <a href="">Umer Hurrah</a> and <a href="">Vinod Kumar</a>
-              </span>
+              </span> |
+               <span>Privacy Policy</span> |
+                <span>Terms and Conditions</span>
                 </div>
 
-                <div class="col-sm-4 text-center">
+                <div class="col-sm-2 text-center">
                     <div id="back-to-top">
                         <a href="#top">
                             <i class="fa fa-angle-up"></i>
@@ -87,7 +82,8 @@
                     </div>
                 </div>
 
-                <div class="col-sm-4 col-xs-12 footer-payment-systems text-right sm-text-center mt-sml-10">
+                <div class="col-sm-3 col-xs-12 footer-payment-systems text-right sm-text-center mt-sml-10">
+                    <span>We Accept</span>
                     <i class="fa fa-cc-paypal"></i>
                     <i class="fa fa-cc-visa"></i>
                     <i class="fa fa-cc-mastercard"></i>

@@ -8,18 +8,20 @@
                 <div class="top-bar-line">
                     <div class="row">
                         <div class="top-bar-links">
-                            <ul class="col-sm-6 top-bar-acc">
-                                <li class="top-bar-link"><a href="#">My Account</a></li>
-                                <li class="top-bar-link"><a href="#">My Wishlist</a></li>
-                                <?php 
-                                if (isset($_SESSION['customer_firstname'])) {
-                                    echo "<li class='top-bar-link'><a href='admin/logout.php'>Logout</a></li>";
-                                }
-                                else{
-                                    echo "<li class='top-bar-link'><a href='login.php'>Login</a></li>";
-                                }
-                                ?>
-                                <li class="top-bar-link"><a href="">Contact</a></li>
+                            <ul class="col-sm-12 top-bar-acc">
+                                <li class="top-bar-link"><a href="#">Track</a></li>
+                                <li class="top-bar-link"><a href="#">F.A.Q</a></li>
+                                <li class="top-bar-link"><a href="#">Help</a></li>
+                                <li class="top-bar-link"><a href="#">Sign Up</a></li>
+                                <li class="top-bar-link"><a href="">Login</a></li>
+                                <li class="top-bar-links">
+                                    <select class="">
+                                        <option value="login">My Account</option>
+                                        <option value="signup">Wishlist</option>
+                                        <option value="signup">Bookings</option>
+                                        <option>Logout</option>
+                                    </select>
+                                </li>
                             </ul>
                         </div>
                     </div>
