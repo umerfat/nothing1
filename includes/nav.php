@@ -28,7 +28,7 @@
                         <div class="logo-container">
                             <div class="logo-wrap text-center">
                                 <a href="index.php">
-                                    <img class="logo" src="" alt="logo">
+                                    <img class="logo" src="IMAGES/labourlogo.png" alt="logo" height="100px" width="100px">
                                 </a>
                             </div>
                         </div>

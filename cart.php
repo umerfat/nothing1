@@ -34,7 +34,7 @@
                         <tr class="cart_item">
                             <td class="product-thumbnail">
                                 <a href="#">
-                                    <img src="img/shop/item1.jpeg" alt="">
+                                    <img src="IMAGES/labour/labour1.jpeg" alt="">
                                 </a>
                             </td>
                             <td class="product-name">
@@ -65,7 +65,7 @@
                         <tr class="cart_item">
                             <td class="product-thumbnail">
                                 <a href="#">
-                                    <img src="img/shop/item2.jpeg" alt="">
+                                    <img src="IMAGES/labour/labour2.jpeg" alt="">
                                 </a>
                             </td>
                             <td class="product-name">
