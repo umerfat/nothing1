@@ -1,37 +1,35 @@
+top_nav.php"; ?>
 <?php
 
-if (isset($_GET['edit_customer'])){
+if (isset($_GET['c_id'])){
 
-    $edit_customer = $_GET['edit_customer'];
+    $customer_id = $_GET['c_id'];
 
-    $query = "SELECT * FROM customers WHERE customer_id = {$edit_customer}";
+    $query = "SELECT * FROM customers WHERE customer_id = {$customer_id}";
     $select_query = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($select_query)){
 
-        $customer_id = $row['customer_id'];
-        $customername = $row['customername'];
-        $customer_password = $row['customer_password'];
+        $customer_id        = $row['customer_id'];
+        // $customer_password = $row['customer_password'];
         $customer_firstname = $row['customer_firstname'];
-        $customer_lastname = $row['customer_lastname'];
-        $customer_email = $row['customer_email'];
-        $customer_image = $row['customer_image'];
-        $customer_role = $row['customer_role'];
+        $customer_lastname  = $row['customer_lastname'];
+        $customer_email     = $row['customer_email'];
+        $customer_email     = $row['customer_phone'];
+        $customer_image     = $row['customer_image'];
+        $customer_role      = $row['customer_status'];
     }
 }
 
 if (isset($_POST['update_customer'])){
 
-    $customer_firstname = $_POST['first_name'];
-    $customer_lastname = $_POST['last_name'];
-    $customername = $_POST['customername'];
-    $customer_image = $_FILES['customer_image']['name'];
-    $customer_tmp_image = $_FILES['customer_image']['tmp_name'];
-    $customer_role = $_POST['role'];
-    $customer_email = $_POST['customer_email'];
-    $customer_password = $_POST['customer_password'];
-    $customer_password = password_hash($customer_password, PASSWORD_BCRYPT);
+    $customer_firstname  = $_POST['first_name'];
+    $customer_lastname   = $_POST['last_name'];
+    $customer_email      = $_POST['customer_email'];
+    $customer_image      = $_FILES['customer_image']['name'];
+    $customer_tmp_image  = $_FILES['customer_image']['tmp_name'];
+    $customer_role       = $_POST['customer_status'];
 
-    move_uploaded_file($customer_tmp_image, "../customer_IMAGES/$customer_image");
+    move_uploaded_file($customer_tmp_image, "../IMAGES/CUSTOMER_IMAGES/$customer_image");
 
     if (empty($customer_image)){
         $query = "SELECT * FROM customers WHERE customer_id = $edit_customer ";

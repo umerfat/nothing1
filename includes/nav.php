@@ -88,7 +88,7 @@
                                             <div class="row">
 
                                                 <div class="col-md-3 megamenu-item">
-                                                    <h6>For Man</h6>
+                                                    <h6>Masons</h6>
                                                     <ul class="menu-list">
                                                         <li><a href="#">Shirts</a></li>
                                                         <li><a href="#">Jeans</a></li>
@@ -98,7 +98,7 @@
                                                 </div>
 
                                                 <div class="col-md-3 megamenu-item">
-                                                    <h6>For Woman</h6>
+                                                    <h6>Carpenters</h6>
                                                     <ul class="menu-list">
                                                         <li><a href="#">Dresses</a></li>
                                                         <li><a href="#">Coats</a></li>
@@ -108,7 +108,7 @@
                                                 </div>
 
                                                 <div class="col-md-3 megamenu-item">
-                                                    <h6>Accessories</h6>
+                                                    <h6>General Labours</h6>
                                                     <ul class="menu-list">
                                                         <li><a href="#">Wallets</a></li>
                                                         <li><a href="#">Watches</a></li>
@@ -117,7 +117,7 @@
                                                     </ul>
                                                 </div>
 
-                                                <div class="col-md-3 megamenu-item">
+                                         <!--        <div class="col-md-3 megamenu-item">
                                                     <h6>Bags</h6>
                                                     <ul class="menu-list">
                                                         <li><a href="#">Leather</a></li>
@@ -125,7 +125,7 @@
                                                         <li><a href="#">Street Style</a></li>
                                                         <li><a href="#">Creative</a></li>
                                                     </ul>
-                                                </div>
+                                                </div> -->
 
                                             </div>
                                         </div>
