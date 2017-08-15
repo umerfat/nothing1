@@ -14,6 +14,7 @@ function clean($string){
 function redirect($location){
 
     header("Location: " . $location);
+    //header("Refresh:3; url=".$location);
 }
 
 function set_message($message){
@@ -65,7 +66,7 @@ function add_labour(){
         $labour_tmp_image    = $_FILES['image']['tmp_name'];
         // $labour_content      = $_POST['content'];
         // $labour_content      = str_replace("'", "''", $post_content);
-        move_uploaded_file($labour_tmp_image, "../LABOUR_IMAGES/$labour_image");
+        move_uploaded_file($labour_tmp_image, "../IMAGES/LABOUR_IMAGES/$labour_image");
 
         // $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
         // $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_state}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
@@ -342,4 +343,78 @@ function update_user_profile(){
     }
 }
 
+function register_customer(){
+    if (isset($_POST['lb_cus_register'])) {
+
+        global $connection;
+        $firstName         = clean($_POST['cus_first_name']);
+        $lastName          = clean($_POST['cus_last_name']);
+        $email             = clean($_POST['cus_email']);
+        $phone             = clean($_POST['cus_phone_no']);
+        $password          = clean($_POST['cus_password']);
+        $password          = password_hash($password, PASSWORD_BCRYPT);
+        $registration_date = date("F j, Y");
+        $query  = "INSERT INTO customers(customer_first_name,customer_last_name,customer_email,customer_phone,customer_password,registration_date) ";
+        $query .= "VALUES(?,?,?,?,?,?)";
+        $stmt   = mysqli_prepare($connection,$query);
+        mysqli_stmt_bind_param($stmt,"ssssss", $firstName, $lastName, $email, $phone, $password, $registration_date);
+        $query_result = mysqli_stmt_execute($stmt);
+        if (!$query_result){
+
+            die("Query failed " . mysqli_error($connection));
+        }
+        else{
+            echo "
+            <div class='col-md-12 col-xs-12'>
+              <div class='alert alert-success alert-dismissable fade in'>
+                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;                 </a>
+                <strong>Congratulations {$firstName} {$lastName}! your account has been created!</strong>
+              </div>
+            </div>
+            ";
+        }
+    }
+}
+
+function login_customer(){
+    global $connection;
+    if (isset($_POST['lb_customer_login'])){
+
+        if (empty($_POST['cus_email_phone']) && empty($_POST['cus_password'])) {
+            echo validation_errors("Email/Phone or Password Can not be empty ");
+            //redirect("login.php");
+            return false;
+        }
+        $email_phone = clean($_POST['cus_email_phone']);
+        $password    = clean($_POST['cus_password']);
+
+        $email_phone = escape($email_phone);
+        $password    = escape($password);
+
+        $query = "SELECT * FROM customers WHERE customer_email = '{$email_phone}' OR customer_phone = '{$email_phone}'";
+        $select_query = mysqli_query($connection, $query);
+        if (!$select_query){
+            die("Failed " . mysqli_error($connection));
+        }
+        $row = mysqli_fetch_assoc($select_query);
+
+            $db_id              = trim($row['customer_id']);
+            $db_firstName       = trim($row['customer_first_name']);
+            $db_lastName        = trim($row['customer_last_name']);
+            $db_password        = trim($row['customer_password']);
+            $db_phone           = trim($row['customer_phone']);
+            $db_email           = trim($row['customer_email']);
+        if (!strcmp($email_phone, $db_phone) || !strcmp($email_phone, $db_email) && password_verify($password, $db_password)){
+
+            $_SESSION['customer_firstname'] = $db_firstName;
+            $_SESSION['customer_lastname']  = $db_lastName;
+            redirect("index.php");
+            //echo validation_errors("Welcome to labour ease");
+        }
+        else{
+            echo validation_errors("email/phone or Password Wrong. Please try again.");
+            return false;
+        }
+    }
+}
 ?>

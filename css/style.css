@@ -942,7 +942,7 @@ ol.numbers {
 
 .logo,
 .logo-dark {
-  max-height: 20px;
+  max-height: 30px;
 }
 
 .navbar-header {
@@ -1837,19 +1837,19 @@ ol.numbers {
 }
 
 #flexslider-hero .img-holder.img-1 {
-  background-image: url(../img/slider/carpenter-2.jpg);
+  background-image: url(../IMAGES/slider/carpenter-2.jpg);
 }
 
 #flexslider-hero .img-holder.img-2 {
-  background-image: url(../img/slider/labour1.jpg);
+  background-image: url(../IMAGES/slider/labour1.jpg);
 }
 
 #flexslider-hero .img-holder.img-3 {
-  background-image: url(../img/slider/mason1.jpg);
+  background-image: url(../IMAGES/slider/mason1.jpg);
 }
 
 #flexslider-hero .img-holder.img-4 {
-  background-image: url(../img/slider/labour2.jpg);
+  background-image: url(../IMAGES/slider/labour2.jpg);
 }
 
 /*-------------------------------------------------------*/
@@ -4087,11 +4087,7 @@ table th {
 /*-------------------------------------------------------*/
 .product-item {
   margin-bottom: 40px;
-<<<<<<< HEAD
-  border-bottom: 1px solid #ebebeb;
-=======
   /*border-bottom: 1px solid #ebebeb;*/
->>>>>>> 0b4e6aac186858f4b18c8900c67d1b7e57d371ca
   padding-bottom: 20px;
 }
 

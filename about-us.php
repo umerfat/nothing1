@@ -9,7 +9,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <img src="img/about.jpeg" alt="">
+            <img src="IMAGES/3.jpg" alt="">
           </div>
         </div>
         <div class="row">
@@ -41,7 +41,7 @@
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="img/team/member1.jpeg" alt="">
+                <img src="IMAGES/team/member1.jpeg" alt="">
               </div>
               <h4 class="team-title uppercase">Monica Geller</h4>
               <span>CEO of Company</span>
@@ -60,7 +60,7 @@
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="img/team/member2.jpg" alt="">
+                <img src="IMAGES/team/member2.jpg" alt="">
               </div>
               <h4 class="team-title uppercase">Chandler Bing</h4>
               <span>Art Director</span>
@@ -79,7 +79,7 @@
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="img/team/member3.jpeg" alt="">
+                <img src="IMAGES/team/member3.jpeg" alt="">
               </div>
               <h4 class="team-title uppercase">Joey Tribiani</h4>
               <span>HR Manager</span>
@@ -98,7 +98,7 @@
           <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="img/team/member4.jpeg" alt="">
+                <img src="IMAGES/team/member4.jpeg" alt="">
               </div>
               <h4 class="team-title uppercase">Ross Geller</h4>
               <span>Lead Designer</span>

@@ -38,7 +38,7 @@ if (isset($_POST['update_labour'])){
     $status             = clean($_POST['status']);
     $labour_image       = $_FILES['image']['name'];
     $labour_tmp_image   = $_FILES['image']['tmp_name'];
-    move_uploaded_file($labour_tmp_image, "../LABOUR_IMAGES/$labour_image");
+    move_uploaded_file($labour_tmp_image, "../IMAGES/LABOUR_IMAGES/$labour_image");
 
     if (empty($labour_image)){
         $query = "SELECT * FROM labour WHERE labour_id = $edit_p_id ";
@@ -179,7 +179,7 @@ if (isset($_POST['update_labour'])){
     <div class="item form-group">
         <label class="control-label col-md-1 col-sm-12 col-xs-12" for="Image">Image </label>
         <div class="col-md-10 col-sm-12 col-xs-12">
-            <img src="../LABOUR_IMAGES/<?php echo $labour_image_old; ?>" width="200" alt="Image not
+            <img src="../IMAGES/LABOUR_IMAGES/<?php echo $labour_image_old; ?>" width="200" alt="Image not
             displayed" class="img-responsive">
             <input type="file" id="Image" name="image" class="form-control col-md-7
             col-xs-12">

@@ -21,26 +21,26 @@
         <div class="row">
             <div class="col-sm-5 col-sm-offset-1 mb-40">
             <?php 
-            if (isset($_POST['lb_user_login'])) {
-                login_user();
+            if (isset($_POST['lb_customer_login'])) {
+                login_customer();
             }
             ?>
                 <div class="login">
                     <h4 class="uppercase">login</h4>
                     <form method="POST" role ="form" id="customer_login_id">
                         <p class="form-row form-row-wide">
-                            <label>username or email
+                            <label>phone or email
                                 <abbr class="required" title="required">*</abbr>
                             </label>
-                            <input type="text" class="input-text" name = "username" placeholder="username" value="">
+                            <input type="text" class="input-text" name = "cus_email_phone" placeholder="Email or Phone Number" value="">
                         </p>
                         <p class="form-row form-row-wide">
                             <label>password
                                 <abbr class="required" title="required">*</abbr>
                             </label>
-                            <input type="password" class="input-text" name="password" placeholder="password" value="">
+                            <input type="password" class="input-text" name="cus_password" placeholder="password" value="">
                         </p>
-                        <input type="submit" value="Login" name = "lb_user_login" class="btn">
+                        <input type="submit" value="Login" name = "lb_customer_login" class="btn">
                         <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
                         <label for="remember" class="checkbox">Remember me</label>
                         <a href="#">Lost Password?</a>
@@ -48,28 +48,45 @@
                 </div>
             </div>
             <div class="col-sm-5">
+             <?php 
+            if (isset($_POST['lb_cus_register'])) {
+                register_customer();
+            }
+            ?>
                 <div class="register">
                     <h4 class="uppercase">Register</h4>
                     <form method="POST" role="form" id ="customer_register_id" style="display: block;">
+                    <p class="form-row form-row-wide">
+                        <label>First Name
+                            <abbr class="required" title="required">*</abbr>
+                        </label>
+                        <input type="text" class="input-text" placeholder="Umer" value="" name="cus_first_name">
+                    </p>
+                    <p class="form-row form-row-wide">
+                        <label>Last Name
+                            <abbr class="required" title="required">*</abbr>
+                        </label>
+                        <input type="text" class="input-text" placeholder="Hurrah" value="" name="cus_last_name">
+                    </p>
                         <p class="form-row form-row-wide">
                             <label>email
                                 <abbr class="required" title="required">*</abbr>
                             </label>
-                            <input type="text" class="input-text" placeholder="E.g your email id" value="" name="cus_email">
+                            <input type="email" class="input-text" placeholder="Email" value="" name="cus_email">
                         </p>
                         <p class="form-row form-row-wide">
                             <label>phone
                                 <abbr class="required" title="required">*</abbr>
                             </label>
-                            <input type="text" class="input-text" placeholder="E.g phone number" value="" name = "cus_phone-no">
+                            <input type="text" class="input-text" placeholder="Phone Number" value="" name = "cus_phone_no">
                         </p>
                         <p class="form-row form-row-wide">
                             <label>password
                                 <abbr class="required" title="required">*</abbr>
                             </label>
-                            <input type="text" class="input-text" placeholder="Password" value="" name="cus_password">
+                            <input type="password" class="input-text" placeholder="Password" value="" name="cus_password">
                         </p>
-                        <input type="submit" value="Register" class="btn" name="lb_cus_registration">
+                        <input type="submit" value="Register" class="btn" name="lb_cus_register">
                     </form>
                 </div>
         </div>

@@ -72,13 +72,12 @@
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-comments-o"></i></div>
                                 <?php
-                                //$count = recordCount('comments');
-                                //echo "<div class='count'>{$count}</div>";
+                                $count = recordCount('customers');
+                                echo "<div class='count'>{$count}</div>";
                                 ?>
-                                <div class='count'>300</div>
                                 <h3>Customers</h3>
                                 <?php
-                                //$query = "SELECT * FROM comments WHERE comment_status = 'approved'";
+                                //$query = "SELECT * FROM customers WHERE comment_status = 'approved'";
                                 //$select_query = mysqli_query($connection, $query);
                                 //$count = mysqli_num_rows($select_query);
                                 //echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Comments Approved</span>";

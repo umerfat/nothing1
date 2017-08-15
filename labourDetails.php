@@ -11,8 +11,8 @@
 
             <div class="col-sm-6 col-xs-12 mb-60">
                 <div class="gallery-cell">
-                    <a href="IMAGES/shop/item6.jpeg" class="lightbox-img">
-                        <img src="IMAGES/shop/item6.jpeg" alt="" />
+                    <a href="IMAGES/labour/labour6.jpeg" class="lightbox-img">
+                        <img src="IMAGES/labour/labour6.jpeg" alt="" />
                     </a>
                 </div>
             </div> <!-- end col img slider -->

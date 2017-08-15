@@ -8,8 +8,6 @@
         <th>Lastname</th>
         <th>Email</th>
         <th>Role</th>
-        <th>Admin</th>
-        <th>Subscriber</th>
         <th>Take Action</th>
     </tr>
     </thead>
@@ -41,9 +39,6 @@
         echo "<td>{$user_lastname}</td>";
         echo "<td>{$user_email}</td>";
         echo "<td>{$user_role}</td>";
-        echo "<td>
-<a href='users.php?change_to_admin={$user_id}' class='btn btn-success btn-xs'><i class='fa fa-user'></i> Admin</a></td>";
-        echo "<td><a href='users.php?change_to_subscriber={$user_id}' class='btn btn-success btn-xs'><i class='fa fa-user'></i> Subscriber</a> </td>";
         echo "<td>
                 <ul class='take-action'>
                 <li> <a href='users.php?source=edit_user&edit_user={$user_id}' class='btn btn-info'><i class='fa fa-pencil'></i>

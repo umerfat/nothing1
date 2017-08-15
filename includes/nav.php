@@ -28,7 +28,7 @@
                         <div class="logo-container">
                             <div class="logo-wrap text-center">
                                 <a href="index.php">
-                                    <img class="logo" src="" alt="logo">
+                                    <img class="logo" src="IMAGES/labourlogo.png" alt="logo" height="100px" width="100px">
                                 </a>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     </div>
 
                                     <div class="nav-cart-actions mt-20">
-                                        <a href="" class="btn btn-md btn-dark"><span>View Cart</span></a>
+                                        <a href="cart.php" class="btn btn-md btn-dark"><span>View Cart</span></a>
                                         <a href="" class="btn btn-md btn-color mt-10"><span>Proceed to Checkout</span></a>
                                     </div>
                                 </div>

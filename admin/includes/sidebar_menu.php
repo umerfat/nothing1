@@ -4,7 +4,7 @@
     <div class="menu_section">
         <ul class="nav side-menu">
             <li>
-                <a href="index.php"><i class="fa fa-home"></i>
+                <a href="dashboard.php"><i class="fa fa-home"></i>
                     Dashboard
                 </a>
             </li>
@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li>
-                <a href="profile.php"><i class="fa fa-user-secret"></i>
+                <a href="customers.php"><i class="fa fa-user-secret"></i>
                     Customers
                 </a>
             </li>
