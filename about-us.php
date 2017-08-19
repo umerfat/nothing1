@@ -61,7 +61,6 @@
             <div class="team-member">
               <div class="team-img">
                 <img src="IMAGES/team/member2.jpg" alt="">
->>>>>>> 64c7b0194dbaa4d289adc40553d35df247aeb349
               </div>
               <h4 class="team-title uppercase">Chandler Bing</h4>
               <span>Art Director</span>
