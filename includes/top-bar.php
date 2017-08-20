@@ -15,7 +15,7 @@
                                 <li class="top-bar-link"><a href="#">Sign Up</a></li>
                                 <li class="top-bar-link"><a href="">Login</a></li>
                                 <li class="top-bar-links">
-                                    <select class="">
+                                    <select class="dropdown">
                                         <option value="login">My Account</option>
                                         <option value="signup">Wishlist</option>
                                         <option value="signup">Bookings</option>
