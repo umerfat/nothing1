@@ -1,7 +1,11 @@
+
 <?php
 //make database and function files global to all
 include "database.php";
 include "functions.php";
+if(empty($_SESSION['admin_username']))
+    {redirect("index.php");} ?>
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

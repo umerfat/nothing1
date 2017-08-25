@@ -30,6 +30,7 @@
                 $labour_table[] = $row;
             }
             foreach ($labour_table as $row):
+                $labour_id   = trim($row['labour_id']);
                 $firstName   = trim($row['labour_first_name']);
                 $lastName    = trim($row['labour_last_name']);
                 $labourImage = trim($row['labour_image']);

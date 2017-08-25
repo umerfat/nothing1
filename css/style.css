@@ -1565,24 +1565,24 @@ ol.numbers {
   position: relative;
 }
 
-.top-bar-currency-language > li {
+.top-bar-account > li {
   padding-right: 20px;
 }
 
-.top-bar-currency-language > li > a {
+.top-bar-account > li > a {
   color: #444444;
 }
 
-.top-bar-currency-language > li:last-child {
+.top-bar-account > li:last-child {
   padding-right: 0;
 }
 
-.top-bar-currency-language > li > a > i {
+.top-bar-account > li > a > i {
   margin-left: 5px;
 }
 
 .currency-dropdown,
-.language-dropdown {
+.account-dropdown {
   background-color: #fff;
   padding: 0 10px;
   position: absolute;
@@ -1598,12 +1598,12 @@ ol.numbers {
   transition: all 0.3s ease-in-out;
 }
 
-.language-dropdown {
+.account-dropdown {
   right: 0;
 }
 
 .currency-dropdown ul li,
-.language-dropdown ul li {
+.account-dropdown ul li {
   line-height: 26px;
   border-top: 1px solid #f2f2f2;
   text-transform: uppercase;
@@ -1611,12 +1611,12 @@ ol.numbers {
 }
 
 .currency-dropdown ul li > a,
-.language-dropdown ul li > a {
+.account-dropdown ul li > a {
   color: #7a7a7a;
 }
 
-.top-bar-currency-language > li:hover .currency-dropdown,
-.top-bar-currency-language > li.language:hover .language-dropdown {
+.top-bar-account > li:hover .currency-dropdown,
+.top-bar-account > li.account:hover .account-dropdown {
   visibility: visible;
   opacity: 1;
 }
