@@ -27,19 +27,25 @@
             ?>
                 <div class="login">
                     <h4 class="uppercase">login</h4>
-                    <form method="POST" role ="form" id="customer_login_id">
-                        <p class="form-row form-row-wide">
-                            <label>phone or email
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="text" class="input-text" name = "cus_email_phone" placeholder="Email or Phone Number" value="">
-                        </p>
-                        <p class="form-row form-row-wide">
-                            <label>password
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="password" class="input-text" name="cus_password" placeholder="password" value="">
-                        </p>
+                    <form method="POST" role ="form" id="customer_login_id" data-toggle="validator">
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>email
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="email" class="input-text" name = "cus_email_phone" placeholder="Email" value="" data-error="Email Address is invalid" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>password
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="password" class="input-text" name="cus_password" placeholder="Password" value="" data-error="Password is required" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
                         <input type="submit" value="Login" name = "lb_customer_login" class="btn">
                         <input type="checkbox" class="input-checkbox" id="remember" name="remember" value="1">
                         <label for="remember" class="checkbox">Remember me</label>
@@ -55,37 +61,52 @@
             ?>
                 <div class="register">
                     <h4 class="uppercase">Register</h4>
-                    <form method="POST" role="form" id ="customer_register_id" style="display: block;">
-                    <p class="form-row form-row-wide">
-                        <label>First Name
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="Umer" value="" name="cus_first_name">
-                    </p>
-                    <p class="form-row form-row-wide">
-                        <label>Last Name
-                            <abbr class="required" title="required">*</abbr>
-                        </label>
-                        <input type="text" class="input-text" placeholder="Hurrah" value="" name="cus_last_name">
-                    </p>
-                        <p class="form-row form-row-wide">
-                            <label>email
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="email" class="input-text" placeholder="Email" value="" name="cus_email">
-                        </p>
-                        <p class="form-row form-row-wide">
-                            <label>phone
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="text" class="input-text" placeholder="Phone Number" value="" name = "cus_phone_no">
-                        </p>
-                        <p class="form-row form-row-wide">
-                            <label>password
-                                <abbr class="required" title="required">*</abbr>
-                            </label>
-                            <input type="password" class="input-text" placeholder="Password" value="" name="cus_password">
-                        </p>
+                    <form method="POST" role="form" id ="customer_register_id" style="display: block;" data-toggle="validator">
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>First Name
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="text" class="input-text" placeholder="Umer" value="" name="cus_first_name" pattern="[A-Za-z]" data-error="First Name is required" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>Last Name
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="text" class="input-text" placeholder="Hurrah" value="" name="cus_last_name" pattern="[A-Za-z]" data-error="Last Name is required" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>email
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="email" class="input-text" placeholder="Email" value="" name="cus_email" data-error="Email Address is invalid" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>phone
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="text" class="input-text" placeholder="Phone Number" value="" name = "cus_phone_no" pattern="[789][0-9]{9}" data-error="Mobile Number is required" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="form-row form-row-wide">
+                                <label>password
+                                    <abbr class="required" title="required">*</abbr>
+                                </label>
+                                <input type="password" class="input-text" placeholder="Password" value="" name="cus_password" data-error="Password is required" required>
+                            <div class="help-block with-errors"></div>
+                            </p>
+                        </div>
                         <input type="submit" value="Register" class="btn" name="lb_cus_register">
                     </form>
                 </div>

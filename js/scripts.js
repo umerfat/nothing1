@@ -1,24 +1,24 @@
 (function($){
 
-  "use strict"; 
+  "use strict";
 
   $(window).load(function() {
 
     // Preloader
     $('.loader').fadeOut();
     $('.loader-mask').delay(350).fadeOut('slow');
-    
+
     initOwlCarousel();
     $(window).trigger("resize");
   });
 
-  initFlexSlider();  
+  initFlexSlider();
 
 
   $(window).resize(function(){
     megaMenu();
-    megaMenuWide();    
-    
+    megaMenuWide();
+
     var windowWidth = $(window).width();
     if (windowWidth <= 974) {
       $('.dropdown-toggle').attr('data-toggle', 'dropdown');
@@ -65,7 +65,7 @@
     }
 
   });
-  
+
 
   /* Bootstrap Dropdown Navigation
   -------------------------------------------------------*/
@@ -125,7 +125,7 @@
       /* Testimonials
       -------------------------------------------------------*/
 
-      $("#owl-testimonials").owlCarousel({      
+      $("#owl-testimonials").owlCarousel({
         navigation: false,
         navigationText: ["<i class='icon-Left-2'></i>", "<i class='icon-Right-2'></i>"],
         autoHeight: true,
@@ -133,7 +133,7 @@
         pagination: true,
         paginationSpeed: 400,
         singleItem: true,
-        stopOnHover: true      
+        stopOnHover: true
       })
 
 
@@ -175,7 +175,7 @@
       /* Single Image
       -------------------------------------------------------*/
 
-      $("#owl-single").owlCarousel({     
+      $("#owl-single").owlCarousel({
         navigation: true,
         pagination: false,
         slideSpeed: 300,
@@ -236,7 +236,7 @@
   } else {
     var dataSlideDots = false;
   }
-  
+
 
   // Single item
   $('#slider-single').flickity({
@@ -309,7 +309,7 @@
           item.type = 'image';
         }
       }
-    },    
+    },
     type: 'image',
     closeBtnInside:false,
     gallery:{
@@ -346,15 +346,15 @@
   -------------------------------------------------------*/
   var Methods = $(".payment_methods > li > .payment_box").hide();
   Methods.first().slideDown("easeOutExpo");
-  
+
   $(".payment_methods > li > input").change(function(){
 
     var current = $(this).parent().children(".payment_box");
     Methods.not(current).slideUp("easeInExpo");
     $(this).parent().children(".payment_box").slideDown("easeOutExpo");
-    
+
     return false;
-     
+
   });
 
 
@@ -367,16 +367,16 @@
         var $this = $(this),
         bar = $this.find('.progress-bar'),
         barWidth = bar.attr('aria-valuenow');
-        setTimeout(function() {              
+        setTimeout(function() {
           bar.css({"width": barWidth + '%'});
         }, index * 200);
       });
     };
     loadDaBars();
-    
+
   });
 
-  
+
   /* Accordion
   -------------------------------------------------------*/
   function toggleChevron(e) {
@@ -392,7 +392,7 @@
   /* Toggle
   -------------------------------------------------------*/
   var allToggles = $(".toggle > .panel-content").hide();
-  
+
   $(".toggle > .acc-panel > a").on('click', function(){
 
     if ($(this).hasClass("active")) {
@@ -405,8 +405,8 @@
       $(this).addClass("active");
       $(this).parent().next().slideDown("easeOutExpo");
     }
-    
-    return false;       
+
+    return false;
   });
 
 
@@ -487,54 +487,20 @@
     $( "#slider-range" ).slider({
       range: true,
       min: 0,
-      max: 1500,
-      values: [ 160, 800 ],
+      max: 33000,
+      values: [ 160, 20000 ],
       slide: function( event, ui ) {
-      $( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+      $( "#amount" ).val( "RS." + ui.values[ 0 ] + " - RS." + ui.values[ 1 ] );
       }
     });
-    $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-      " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "RS." + $( "#slider-range" ).slider( "values", 0 ) +
+      " - RS." + $( "#slider-range" ).slider( "values", 1 ) );
   });
 
 
   /* FitVIds
   -------------------------------------------------------*/
   $(".video-wrap").fitVids();
-
-
-  /* Contact Form
-  -------------------------------------------------------*/
-
-  var submitContact = $('#submit-message'),
-    message = $('#msg');
-
-  submitContact.on('click', function(e){
-    e.preventDefault();
-
-    var $this = $(this);
-    
-    $.ajax({
-      type: "POST",
-      url: 'contact.php',
-      dataType: 'json',
-      cache: false,
-      data: $('#contact-form').serialize(),
-      success: function(data) {
-
-        if(data.info !== 'error'){
-          $this.parents('form').find('input[type=text],input[type=email],textarea,select').filter(':visible').val('');
-          message.hide().removeClass('success').removeClass('error').addClass('success').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-        } else {
-          message.hide().removeClass('success').removeClass('error').addClass('error').html(data.msg).fadeIn('slow').delay(5000).fadeOut('slow');
-        }
-      }
-    });
-  });
-
-
-})(jQuery);
-
 
 /* Scroll to Top
 -------------------------------------------------------*/
@@ -554,7 +520,7 @@
       }
     }, false );
   }
-  
+
 })();
 
 $(window).scroll(function(event){
