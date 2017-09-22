@@ -21,10 +21,15 @@
 <body style="background-image: url(img/login-bg.jpeg)" class="body-bg-full">
 <div class="container page-container">
     <div class="page-content">
-        <form method="" action="" class="form-horizontal">
+        <form method="get" action="" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-12">
                     <input type="text" placeholder="Username" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="text" placeholder="Email" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -34,19 +39,23 @@
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <div class="checkbox-inline checkbox-custom pull-left">
-                        <input id="exampleCheckboxRemember" type="checkbox" value="remember">
-                        <label for="exampleCheckboxRemember" class="checkbox-muted text-muted">Remember me</label>
-                    </div>
-                    <div class="pull-right"><a href="" class="inline-block form-control-static">Forgot a Passowrd?</a></div>
+                    <input type="password" placeholder="Confirm Password" class="form-control">
                 </div>
             </div>
-            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block">Sign in</button>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div style="margin-bottom: 7px" class="checkbox-inline checkbox-custom">
+                        <input id="exampleCheckboxAgree" type="checkbox" value="remember">
+                        <label for="exampleCheckboxAgree" class="checkbox-muted text-muted">Agree the terms and policy</label>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block">Sign up</button>
         </form>
         <hr>
 
         <div class="clearfix">
-            <p class="text-muted mb-0 pull-left">Want new account?</p><a href="register.php" class="inline-block pull-right">Sign Up</a>
+            <p class="text-muted mb-0 pull-left">Already have an account?</p><a href="login.php" class="inline-block pull-right">Sign In</a>
         </div>
     </div>
 </div>
