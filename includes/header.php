@@ -29,3 +29,10 @@ if(empty($_SESSION['customer_firstname']))
 </head>
 
 <body class="relative">
+<!-- Preloader -->
+<div class="loader-mask">
+    <div class="loader">
+        <div></div>
+        <div></div>
+    </div>
+</div>

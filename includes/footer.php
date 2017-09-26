@@ -100,7 +100,9 @@
 <!-- jQuery Scripts -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/validator.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>
