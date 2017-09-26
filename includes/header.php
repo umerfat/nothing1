@@ -1,5 +1,10 @@
 <?php include "admin/includes/database.php";?>
 <?php include "admin/functions.php";?>
+<?php
+if(empty($_SESSION['customer_firstname']))
+    //edirect("index.php");} ?>
+
+<?php if(!remember_me())//edirect("index.php");} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

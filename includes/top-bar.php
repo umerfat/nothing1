@@ -12,16 +12,23 @@
                                 <li class="top-bar-link"><a href="#">Track</a></li>
                                 <li class="top-bar-link"><a href="#">F.A.Q</a></li>
                                 <li class="top-bar-link"><a href="#">Help</a></li>
-                                <li class="top-bar-link"><a href="#">Sign Up</a></li>
-                                <li class="top-bar-link"><a href="">Login</a></li>
-                                <li class="top-bar-links">
-                                    <select class="">
-                                        <option value="login">My Account</option>
-                                        <option value="signup">Wishlist</option>
-                                        <option value="signup">Bookings</option>
-                                        <option>Logout</option>
-                                    </select>
-                                </li>
+                                <?php
+                                if (isset($_SESSION['customer_firstname'])) {
+
+                                     echo "<li class='top-bar-links'>
+                                    <select class='' name ='myaccount' onchange='location = this.value;'>
+                                        <option value='login'>My Account</option>
+                                        <option value='signup'>Wishlist</option>
+                                        <option value='signup'>Bookings</option>
+                                        <option value = ''>Logout</option>
+                                        </select>        
+                                </li>";
+                                 }
+                                 else{
+                                    echo "<li class='top-bar-link'><a href='login.php'>Sign Up</a></li>
+                                <li class=''><a href='login.php'>Login</a></li>";
+                                 }
+                                ?>
                             </ul>
                         </div>
                     </div>

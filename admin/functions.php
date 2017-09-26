@@ -387,6 +387,7 @@ function login_customer(){
         }
         $email_phone = clean($_POST['cus_email_phone']);
         $password    = clean($_POST['cus_password']);
+        $remember    = clean($_POST['remember']);
 
         $email_phone = escape($email_phone);
         $password    = escape($password);
@@ -405,7 +406,9 @@ function login_customer(){
             $db_phone           = trim($row['customer_phone']);
             $db_email           = trim($row['customer_email']);
         if (!strcmp($email_phone, $db_phone) || !strcmp($email_phone, $db_email) && password_verify($password, $db_password)){
-
+            // if($remember == "on"){
+            //     setcookie('customer_firstname', $db_firstName, time() + 1200, '/');
+            // }
             $_SESSION['customer_firstname'] = $db_firstName;
             $_SESSION['customer_lastname']  = $db_lastName;
             redirect("index.php");
@@ -416,5 +419,14 @@ function login_customer(){
             return false;
         }
     }
+}
+
+function remember_me(){
+    if (isset($_SESSION['customer_firstname']) || isset($_COOKIE['customer_firstname'])) {
+            return true;
+        }
+        else{
+           return false; 
+        }
 }
 ?>
