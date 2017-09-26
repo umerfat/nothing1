@@ -94,30 +94,36 @@
                                                 <div class="col-md-3 megamenu-item">
                                                     <h6>Masons</h6>
                                                     <ul class="menu-list">
-                                                        <li><a href="#">Shirts</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Accessories</a></li>
-                                                        <li><a href="#">Shoes</a></li>
+                                                        <li><a href="#">Head Masons</a></li>
+                                                        <li><a href="#">Medium Masons</a></li>
+                                                        <li><a href="#">Junior Masons</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-3 megamenu-item">
                                                     <h6>Carpenters</h6>
                                                     <ul class="menu-list">
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Coats</a></li>
-                                                        <li><a href="#">Accessories</a></li>
-                                                        <li><a href="#">Sandals</a></li>
+                                                        <li><a href="#">Head Carpenters</a></li>
+                                                        <li><a href="#">Meduim Carpenters</a></li>
+                                                        <li><a href="#">Junior Carpenters</a></li>
                                                     </ul>
                                                 </div>
 
                                                 <div class="col-md-3 megamenu-item">
                                                     <h6>General Labours</h6>
                                                     <ul class="menu-list">
-                                                        <li><a href="#">Wallets</a></li>
-                                                        <li><a href="#">Watches</a></li>
-                                                        <li><a href="#">Belts</a></li>
-                                                        <li><a href="#">Scarfs</a></li>
+                                                        <li><a href="#">Construction Works</a></li>
+                                                        <li><a href="#">Agricultural Works</a></li>
+                                                        <li><a href="#">Construction And Agricultural Works</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="col-md-3 megamenu-item">
+                                                    <h6>Painters</h6>
+                                                    <ul class="menu-list">
+                                                        <li><a href="#">Head Painters</a></li>
+                                                        <li><a href="#">Medium Painters</a></li>
+                                                        <li><a href="#">Junior Painters</a></li>
                                                     </ul>
                                                 </div>
 
@@ -145,15 +151,15 @@
                                 <a href="contact.php">Contact</a>
                             </li>
 
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a href="#">My Account</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
                                 <ul class="dropdown-menu">
                                     <li><a href="">Login</a></li>
                                     <li><a href="">Sign Up</a></li>
                                 </ul>
-                            </li>
-
+                            </li> -->
+                            
                             <li class="mobile-links">
                                 <ul>
                                     <li>
