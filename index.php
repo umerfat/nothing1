@@ -42,16 +42,16 @@
 
                             </a>
                             <div class="product-actions">
-                                <a href="product.php" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
+                                <a href="" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="product.php" class="product-quickview">Quick View</a>
+                            <a href="labourDetails.php" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">
                             <h3>
-                                <a class="product-title" href="#"><?php echo $firstName." ".$lastName?></a>
+                                <a class="product-title" href="labourDetails.php"><?php echo $firstName." ".$lastName?></a>
                             </h3>
                             <span class="price">
                               <ins>
