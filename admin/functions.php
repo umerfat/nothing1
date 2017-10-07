@@ -305,7 +305,7 @@ function update_user_profile(){
         $user_password = $_POST['user_password'];
         //$user_password = password_hash($user_password, PASSWORD_BCRYPT);
 
-        move_uploaded_file($user_tmp_image, "../USER_IMAGE/$user_image");
+        move_uploaded_file($user_tmp_image, "../USER_IMAGES/$user_image");
 
         if (empty($user_image)) {
             $query = "SELECT * FROM users WHERE username = '{$username}'";
