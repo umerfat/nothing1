@@ -18,4 +18,3 @@
 </section> <!-- end 404 -->
 
 <?php include "includes/footer.php"; ?>
-</html>
