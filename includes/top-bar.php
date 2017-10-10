@@ -8,45 +8,21 @@
                 <div class="top-bar-line">
                     <div class="row">
                         <div class="top-bar-links">
-<!-- <<<<<<< HEAD
-                            <ul class="col-sm-12 top-bar-acc">
-                                <li class="top-bar-link"><a href="#">Track</a></li>
-                                <li class="top-bar-link"><a href="#">F.A.Q</a></li>
-                                <li class="top-bar-link"><a href="#">Help</a></li>
-                                <?php
-                                if (isset($_SESSION['customer_firstname'])) {
-
-                                     echo "<li class='top-bar-links'>
-                                    <select class='' name ='myaccount' onchange='location = this.value;'>
-                                        <option value='login'>My Account</option>
-                                        <option value='signup'>Wishlist</option>
-                                        <option value='signup'>Bookings</option>
-                                        <option value = ''>Logout</option>
-                                        </select>        
-                                </li>";
-                                 }
-                                 else{
-                                    echo "<li class='top-bar-link'><a href='login.php'>Sign Up</a></li>
-                                <li class=''><a href='login.php'>Login</a></li>";
-                                 }
-                                ?>
-======= -->
-                            <ul class="col-sm-10 top-bar-acc" style="left: 50px">
+                           <ul class="col-sm-10 top-bar-acc" style="left: 190px">
                                <li class="top-bar-link"><a href="#">Track</a></li>
                                <li class="top-bar-link"><a href="faq.php">F.A.Q</a></li>
                                <li class="top-bar-link"><a href="#">Help</a></li>
-
+                               <li class="top-bar-link"><a href="contact.php">Contact</a></li>
                                <li class="top-bar-link"><a href="register.php">Sign Up</a></li>
                                <li class="top-bar-link"><a href="login.php">Login</a></li>
-                               <li class="top-bar-link"><a href="contact.php">Contact</a></li>
-                               <li>
+                               <!-- <li>
                                     <div class="social-icons">
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                         <a href="#"><i class="fa fa-facebook"></i></a>
                                         <a href="#"><i class="fa fa-google-plus"></i></a>
                                         <a href="#"><i class="fa fa-linkedin"></i></a>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                           <!--   <ul class="col-sm-2 top-bar-account">
                                 <li class="account">

@@ -4,7 +4,7 @@
 if(empty($_SESSION['customer_firstname']))
     //edirect("index.php");} ?>
 
-<?php if(!remember_me())//edirect("index.php");} ?>
+<?php //if(!remember_me()) redirect("index.php");} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

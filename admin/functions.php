@@ -61,7 +61,7 @@ function add_labour(){
         $labour_address      = clean($_POST['address']);
         $labour_email        = clean($_POST['email']);
         $labour_status       = clean($_POST['status']);
-        $labour_date         = date("F j, Y");
+        //$labour_date         = date("F j, Y");
         $labour_image        = $_FILES['image']['name'];
         $labour_tmp_image    = $_FILES['image']['tmp_name'];
         // $labour_content      = $_POST['content'];
@@ -86,10 +86,10 @@ function add_labour(){
         //     </div>
         //     ";
         // }
-        $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
-        $query .= "VALUES(?, ?, ?, ?,?,?,?, ?, ?, ?, ?)";
+        $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name,labour_govt_id,labour_phone,labour_state,labour_address,labour_email, labour_status, labour_image) ";
+        $query .= "VALUES(?, ?, ?, ?,?,?,?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "issssssssss", $labour_category_id, $labour_first_name, $labour_last_name, $labour_govt_id, $labour_phone_number, $labour_state, $labour_address, $labour_email, $labour_status, $labour_date, $labour_image);
+        mysqli_stmt_bind_param($stmt, "isssssssss", $labour_category_id, $labour_first_name, $labour_last_name, $labour_govt_id, $labour_phone_number, $labour_state, $labour_address, $labour_email, $labour_status, $labour_image);
         $insert_query = mysqli_stmt_execute($stmt);
         if (!$insert_query){
 
