@@ -15,6 +15,35 @@
             </div>
         </div>
         <div class="clearfix"></div>
+        <!-- <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_content">
+                        <?php
+
+                        if (isset($_GET['customer'])){
+
+                            $customer = $_GET['customer'];
+                        }
+                        else{
+                            $customer = "";
+                        }
+                        switch ($customer){
+
+                            case 'edit_customer':
+                                include "includes/edit_customer.php";
+                                break;
+
+                            default:
+                                include "includes/view_all_customers.php";
+                                break;
+                        }
+
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div> -->
         <table id="datatable-responsive" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
@@ -58,11 +87,9 @@
                 echo "<td>{$customer_email}</td>";
                 echo "<td class='col-sm-2'>
                     <ul class='take-action'>
-                <!--     <li><a href='includes/edit_customer.php?p_id={$customer_id}' class='btn btn-success'><i class='fa fa-folder'></i>
-                </a></li> -->
-                    <li><a href='labours.php?labour=edit_labour&p_id={$customer_id}' class='btn btn-info'><i class='fa fa-pencil'></i> 
+                    <li><a href='customers.php' class='btn btn-info'><i class='fa fa-pencil'></i> 
                 </a></li>
-                    <li><a onclick=\"javascript:; return confirm('Are you sure you want to delete')\" href='customers.php?delete={$labour_id}' class='btn btn-danger'><i
+                    <li><a onclick=\"javascript:; return confirm('Are you sure you want to delete')\" href='customers.php?delete={$customer_id}' class='btn btn-danger'><i
                  class='fa fa-trash-o'></i> 
                 </a></li>
                     </ul>

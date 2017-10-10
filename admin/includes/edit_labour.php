@@ -7,7 +7,7 @@ if (isset($_GET['p_id'])){
     $query = "SELECT * FROM labour WHERE labour_id = $edit_p_id";
 
     //$stmt = mysqli_prepare($connection,$query);
-    //mysqli_bind_param($stmt,i,$edit_p_id); 
+    //mysqli_bind_param($stmt,i,$edit_p_id);  
     $select_labour_by_id = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($select_labour_by_id)) {
 

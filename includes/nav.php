@@ -90,47 +90,43 @@
                                     <li>
                                         <div class="megamenu-wrap">
                                             <div class="row">
+                                            <?php
+                                            $select_cat  = "SELECT * FROM categories";
+                                            $result_cat = mysqli_query($connection, $select_cat);
+                                            while($row = mysqli_fetch_assoc($result_cat)){
+                                                $cat_arr[] = $row;
+                                            }
+                                            foreach($cat_arr as $cat_row):
+                                                $cat_id   = $cat_row['cat_id'];
+                                                $cat_name = $cat_row['cat_name'];
+                                                //echo "<h6>{$cat_name}</h6>";
+                                                echo "<div class='col-md-3 megamenu-item'>";
+                                                echo "<h6>{$cat_name}</h6>";
+                                                echo "<ul class='menu-list'>";
+                                                $select_sub_cat = "SELECT * FROM tbl_sub_categories WHERE cat_id = $cat_id";
+                                                $result_sub_cat = mysqli_query($connection, $select_sub_cat);
+                                                while($sub_row = mysqli_fetch_assoc($result_sub_cat)){
+                                                    $sub_cat_arr[] = $sub_row;
+                                                }
+                                                foreach($sub_cat_arr as $sub_cat_row):
+                                                    $sub_cat_id = $sub_cat_row['sub_cat_id'];
+                                                $sub_cat_name = $sub_cat_row['sub_cat_name'];
+                                                echo " <li><a href='#'>{$sub_cat_name}</a></li>";
+                                                $sub_cat_arr = null;
+                                                    endforeach;
+                                                echo "</ul>";
+                                                echo "</div>"; 
+                                            endforeach;
+                                            ?>
 
-                                                <div class="col-md-3 megamenu-item">
-                                                    <h6>For Man</h6>
+                                               <!--  <div class="col-md-3 megamenu-item">
+                                                    <h6>General Labours</h6>
                                                     <ul class="menu-list">
-                                                        <li><a href="#">Shirts</a></li>
-                                                        <li><a href="#">Jeans</a></li>
-                                                        <li><a href="#">Accessories</a></li>
-                                                        <li><a href="#">Shoes</a></li>
+                                                        <li><a href="#">Construction Works</a></li>
+                                                        <li><a href="#">Agricultural Works</a></li>
+                                                        <li><a href="#">Construction And Agricultural Works</a></li>
                                                     </ul>
-                                                </div>
-
-                                                <div class="col-md-3 megamenu-item">
-                                                    <h6>For Woman</h6>
-                                                    <ul class="menu-list">
-                                                        <li><a href="#">Dresses</a></li>
-                                                        <li><a href="#">Coats</a></li>
-                                                        <li><a href="#">Accessories</a></li>
-                                                        <li><a href="#">Sandals</a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-md-3 megamenu-item">
-                                                    <h6>Accessories</h6>
-                                                    <ul class="menu-list">
-                                                        <li><a href="#">Wallets</a></li>
-                                                        <li><a href="#">Watches</a></li>
-                                                        <li><a href="#">Belts</a></li>
-                                                        <li><a href="#">Scarfs</a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-md-3 megamenu-item">
-                                                    <h6>Bags</h6>
-                                                    <ul class="menu-list">
-                                                        <li><a href="#">Leather</a></li>
-                                                        <li><a href="#">Sports</a></li>
-                                                        <li><a href="#">Street Style</a></li>
-                                                        <li><a href="#">Creative</a></li>
-                                                    </ul>
-                                                </div>
-
+                                                </div> -->
                                             </div>
                                         </div>
                                     </li>
@@ -145,15 +141,15 @@
                                 <a href="contact.php">Contact</a>
                             </li>
 
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a href="#">My Account</a>
                                 <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
                                 <ul class="dropdown-menu">
                                     <li><a href="">Login</a></li>
                                     <li><a href="">Sign Up</a></li>
                                 </ul>
-                            </li>
-
+                            </li> -->
+                            
                             <li class="mobile-links">
                                 <ul>
                                     <li>

@@ -60,8 +60,8 @@
                 </a>
             </li>
             <li>
-                <a href="customers.php"><i class="fa fa-user-secret"></i>
-                    Customers
+                <a href="customers.php"><i class="fa fa-edit"></i> Customers
+                    <span class="fa fa-chevron-down"></span>
                 </a>
             </li>
         </ul>
