@@ -13,20 +13,19 @@
             <div class="col-md-9 catalogue-col right mb-50">
 
                 <!-- Banner -->
-                <div class="banner-wrap relative">
-                    <img src="IMAGES/4.jpg" alt="">
-                    <div class="hero-holder text-center right-align">
-                        <div class="hero-lines mb-0">
-                            <h1 class="hero-heading white">Carpenters Collections</h1>
-                            <h4 class="hero-subheading white uppercase">HOT AND FRESH TRENDS OF THIS YEAR</h4>
-                        </div>
-                    </div>
-                </div>
+<!--                <div class="banner-wrap relative">-->
+<!--                    <img src="IMAGES/4.jpg" alt="">-->
+<!--                    <div class="hero-holder text-center right-align">-->
+<!--                        <div class="hero-lines mb-0">-->
+<!--                            <h1 class="hero-heading white">Carpenters Collections</h1>-->
+<!--                            <h4 class="hero-subheading white uppercase">HOT AND FRESH TRENDS OF THIS YEAR</h4>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
-                <p class="result-count">Showing: 1-12 of 80 results</p>
-                <div class="shop-filter">
+                <div class="area-filter">
                     <form class="area-selecting">
-                        <select>
+                        <select class="col-md-3">
                             <option value="">Area / District</option>
                             <option value="">Jammu</option>
                             <option value="">Ladakh</option>
@@ -34,7 +33,39 @@
                             <option value="">Srinagar</option>
                             <option value="">Delhi</option>
                         </select>
+
+                        <div class='col-md-3'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-area'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                               <span class="fa fa-calendar"></span>
+                            </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='col-md-3'>
+                            <div class="form-group">
+                                <div class='input-group date' id='datepicker-area-2'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                               <span class="fa fa-calendar"></span>
+                            </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </div>
+                        </div>
                     </form>
+                </div>
+
+                <div class="shop-filter">
+                    <p class="result-count">Showing: 1-12 of 80 results</p>
                     <form class="ecommerce-ordering">
                         <select>
                             <option value="default-sorting">Default Sorting</option>
@@ -384,3 +415,11 @@
 </section>
 
 <?php include "includes/footer.php"; ?>
+<script>
+    $('#datepicker-area').datetimepicker({
+        format: 'DD.MM.YYYY'
+    });
+    $('#datepicker-area-2').datetimepicker({
+        format: 'DD.MM.YYYY'
+    });
+</script>

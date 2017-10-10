@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="css/font-icons.css">
     <link rel="stylesheet" href="css/sliders.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
