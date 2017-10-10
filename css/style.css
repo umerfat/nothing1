@@ -4079,6 +4079,7 @@ table th {
   display: inline-block;
   margin-bottom: 0;
   margin-top: 7px;
+  margin-left: 9px;
 }
 
 .shop-filter {
@@ -4092,10 +4093,19 @@ table th {
 
 .ecommerce-ordering {
   float: right;
-  width: 31%;
+  width: 33.33%;
 }
 
 .ecommerce-ordering select {
+  margin-bottom: 0;
+}
+
+.area-selecting {
+  float: left;
+  width: 33.33%;
+}
+
+.area-selecting select {
   margin-bottom: 0;
 }
 

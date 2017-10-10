@@ -12,7 +12,7 @@
                             <li><a href="about-us.php">About us</a></li>
                             <li><a href="#">Business with us</a></li>
                             <li><a href="#">Delivery information</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="terms-cond.php">Terms &amp; Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <li><a href="contact.php">Contact us</a></li>
                             <li><a href="#">Track order</a></li>
                             <li><a href="faq.php">F.A.Q</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="privacy.php">Privacy policy</a></li>
                             <li><a href="#">Returns</a></li>
                         </ul>
                     </div>
