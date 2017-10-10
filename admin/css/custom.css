@@ -4288,3 +4288,8 @@ ul.take-action{
 ul.take-action li{
     display: inline-block;
 }
+
+.item .col-md-6{
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
