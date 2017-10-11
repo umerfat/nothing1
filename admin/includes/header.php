@@ -3,8 +3,9 @@
 include "database.php";
 include "functions.php";?>
 <?php
-if(empty($_SESSION['admin_username']))
-    {redirect("index.php");} ?>
+//$_SESSION['admin_username'] = 'umer';
+//if(empty($_SESSION['admin_username']))
+    //{redirect("index.php");} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

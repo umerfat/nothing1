@@ -1,3 +1,5 @@
+<?php include "admin/includes/database.php";?>
+<?php include "admin/functions.php";?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%">
 <head>
@@ -21,27 +23,33 @@
 <body style="background-image: url(img/login-bg.jpeg)" class="body-bg-full">
 <div class="container page-container">
     <div class="page-content">
-        <form method="" action="" class="form-horizontal">
+    <?php
+if (isset($_POST['lb_customer_login'])) {
+     login_customer();
+ } 
+?>
+        <form  method= "POST" name="customerForm" action="" class="form-horizontal">
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="text" placeholder="Username" class="form-control">
+                    <input type="text" placeholder="Username or Phone Number" class="form-control" name="cus_username_phone" id="cus_username_phone">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="password" placeholder="Password" class="form-control" name="cus_password" id="cus_password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
                     <div class="checkbox-inline checkbox-custom pull-left">
-                        <input id="exampleCheckboxRemember" type="checkbox" value="remember">
+                        <input id="exampleCheckboxRemember" type="checkbox" value="remember" name="cus_remember" id="cus_remember">
                         <label for="exampleCheckboxRemember" class="checkbox-muted text-muted">Remember me</label>
                     </div>
                     <div class="pull-right"><a href="" class="inline-block form-control-static">Forgot a Passowrd?</a></div>
                 </div>
             </div>
-            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block">Sign in</button>
+            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block" name="lb_customer_login" id="lb_customer_login">Sign in</button>
+            <div id="div_cus_name" class='errorMsg'></div>
         </form>
         <hr>
 
@@ -53,5 +61,7 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- <script type="text/javascript" src="js/lb_customer.js"></script> -->
+<script>
 </body>
 </html>

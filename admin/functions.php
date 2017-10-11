@@ -30,7 +30,6 @@ function set_message($message){
 function display_message(){
 
     if(isset($_SESSION['message'])){
-
         echo $_SESSION['message'];
         unset($_SESSION['message']);
     }
@@ -45,6 +44,16 @@ function validation_errors($error_message){
     </div>
     ";
     return $alert_error_message;
+}
+function validation_success($success_message){
+    $alert_success_message = "
+    <div class='alert alert-success alert-dismissible' role='alert'>
+    <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+    <strong>Success!</strong>
+    {$success_message}
+    </div>
+    ";
+    return $alert_success_message;
 }
 
 //Add labour
@@ -347,31 +356,54 @@ function register_customer(){
     if (isset($_POST['lb_cus_register'])) {
 
         global $connection;
-        $firstName         = clean($_POST['cus_first_name']);
-        $lastName          = clean($_POST['cus_last_name']);
+        $username          = clean($_POST['cus_username']);
         $email             = clean($_POST['cus_email']);
         $phone             = clean($_POST['cus_phone_no']);
         $password          = clean($_POST['cus_password']);
-        $password          = password_hash($password, PASSWORD_BCRYPT);
-        $registration_date = date("F j, Y");
-        $query  = "INSERT INTO customers(customer_first_name,customer_last_name,customer_email,customer_phone,customer_password,registration_date) ";
-        $query .= "VALUES(?,?,?,?,?,?)";
+        $conf_password     = clean($_POST['cus_conf_password']);
+        $agree             = clean($_POST['cus_agree']);
+        $encrypted_password= password_hash($password, PASSWORD_BCRYPT);
+        // if ($agree != 1) {
+        //     echo validation_errors("Please Accept our Terms and Conditions by clicking checkbox");
+        //     return false;
+        // }
+        if (empty($username) || empty($email) || empty($phone)) {
+            echo validation_errors("Fields can't be empty");
+            return false;
+        }
+        if ($password != $conf_password) {
+            echo validation_errors("Password does'nt match");
+            return false;
+        }
+        $query_select = "SELECT * FROM customers";
+        $select_cutomer = mysqli_query($connection, $query_select);
+        var_dump($select_customer);
+        while ($row = mysqli_fetch_assoc($select_customer)) {
+
+            if ($username == trim($row['customer_username'])) {
+                echo validation_errors("Sorry Username is already taken");
+                return false;
+            }
+            if ($email == trim($row['customer_email'])) {
+                echo validation_errors("Sorry Email is already registered");
+                return false;
+            }
+            if ($phone == trim($row['customer_phone'])) {
+                echo validation_errors("Sorry Phone number is already registered");
+                return false;
+            }
+        }
+        $query  = "INSERT INTO customers(customer_username,customer_email,customer_phone,customer_password)";
+        $query .= "VALUES(?,?,?,?)";
         $stmt   = mysqli_prepare($connection,$query);
-        mysqli_stmt_bind_param($stmt,"ssssss", $firstName, $lastName, $email, $phone, $password, $registration_date);
+        mysqli_stmt_bind_param($stmt,"ssss", $username, $email, $phone, $encrypted_password);
         $query_result = mysqli_stmt_execute($stmt);
         if (!$query_result){
 
             die("Query failed " . mysqli_error($connection));
         }
         else{
-            echo "
-            <div class='col-md-12 col-xs-12'>
-              <div class='alert alert-success alert-dismissable fade in'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;                 </a>
-                <strong>Congratulations {$firstName} {$lastName}! your account has been created!</strong>
-              </div>
-            </div>
-            ";
+            echo validation_success("Congratulations {$username}! your account has been created! You can Login now");
         }
     }
 }
@@ -380,19 +412,19 @@ function login_customer(){
     global $connection;
     if (isset($_POST['lb_customer_login'])){
 
-        if (empty($_POST['cus_email_phone']) && empty($_POST['cus_password'])) {
-            echo validation_errors("Email/Phone or Password Can not be empty ");
+        if (empty($_POST['cus_username_phone']) && empty($_POST['cus_password'])) {
+            echo validation_errors("Username/Phone or Password Can not be empty ");
             //redirect("login.php");
             return false;
         }
-        $email_phone = clean($_POST['cus_email_phone']);
-        $password    = clean($_POST['cus_password']);
-        $remember    = clean($_POST['remember']);
+        $username_phone = clean($_POST['cus_username_phone']);
+        $password       = clean($_POST['cus_password']);
+        $remember       = clean($_POST['cus_remember']);
 
-        $email_phone = escape($email_phone);
-        $password    = escape($password);
+        $username_phone = escape($username_phone);
+        $password       = escape($password);
 
-        $query = "SELECT * FROM customers WHERE customer_email = '{$email_phone}' OR customer_phone = '{$email_phone}'";
+        $query = "SELECT * FROM customers WHERE customer_username = '{$username_phone}' OR customer_phone = '{$username_phone}'";
         $select_query = mysqli_query($connection, $query);
         if (!$select_query){
             die("Failed " . mysqli_error($connection));
@@ -400,22 +432,19 @@ function login_customer(){
         $row = mysqli_fetch_assoc($select_query);
 
             $db_id              = trim($row['customer_id']);
-            $db_firstName       = trim($row['customer_first_name']);
-            $db_lastName        = trim($row['customer_last_name']);
+            $db_username        = trim($row['customer_username']);
             $db_password        = trim($row['customer_password']);
             $db_phone           = trim($row['customer_phone']);
-            $db_email           = trim($row['customer_email']);
-        if (!strcmp($email_phone, $db_phone) || !strcmp($email_phone, $db_email) && password_verify($password, $db_password)){
-            // if($remember == "on"){
-            //     setcookie('customer_firstname', $db_firstName, time() + 1200, '/');
-            // }
-            $_SESSION['customer_firstname'] = $db_firstName;
-            $_SESSION['customer_lastname']  = $db_lastName;
+        if (!strcmp($username_phone, $db_phone) || !strcmp($username_phone, $db_username) && password_verify($password, $db_password)){
+            if($remember == "on"){
+                setcookie('customer_firstname', $db_firstName, time() + 1200, '/');
+            }
+            $_SESSION['customer_username'] = $db_username;
             redirect("index.php");
             //echo validation_errors("Welcome to labour ease");
         }
         else{
-            echo validation_errors("email/phone or Password Wrong. Please try again.");
+            echo validation_errors("Username/Phone or Password Wrong. Please try again.");
             return false;
         }
     }
@@ -429,4 +458,3 @@ function remember_me(){
            return false; 
         }
 }
-?>

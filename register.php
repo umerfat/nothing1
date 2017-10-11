@@ -1,3 +1,5 @@
+<?php include "admin/includes/database.php";?>
+<?php include "admin/functions.php";?>
 <!DOCTYPE html>
 <html lang="en" style="height: 100%">
 <head>
@@ -21,36 +23,48 @@
 <body style="background-image: url(img/login-bg.jpeg)" class="body-bg-full">
 <div class="container page-container">
     <div class="page-content">
-        <form method="get" action="" class="form-horizontal">
+    <div id="errMessage">
+    </div>
+    <?php
+    if (isset($_POST['lb_cus_register'])) {
+        register_customer();
+    }
+    ?>
+        <form method="POST" action="" class="form-horizontal" name="customerRegisterForm" id="customerRegisterForm" onsubmit="javascript: return //validateCustomer();">
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="text" placeholder="Username" class="form-control">
+                    <input type="text" placeholder="Username" class="form-control" name="cus_username" id="cus_username">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="text" placeholder="Email" class="form-control">
+                    <input type="text" placeholder="Phone Number" class="form-control" name="cus_phone_no" id="cus_phone_no" maxlength="13">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="Email" placeholder="Email" class="form-control" name="cus_email" id="cus_email">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
-                    <input type="password" placeholder="Confirm Password" class="form-control">
+                    <input type="password" placeholder="Password" class="form-control" name="cus_password" id="cus_password">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <input type="password" placeholder="Confirm Password" class="form-control" name="cus_conf_password" id="cus_conf_password">
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-xs-12">
                     <div style="margin-bottom: 7px" class="checkbox-inline checkbox-custom">
-                        <input id="exampleCheckboxAgree" type="checkbox" value="remember">
-                        <label for="exampleCheckboxAgree" class="checkbox-muted text-muted">Agree the terms and policy</label>
+                        <input id="exampleCheckboxAgree" type="checkbox" value="" name="agree" id="agree">
+                        <label for="exampleCheckboxAgree" class="checkbox-muted text-muted">Agree the terms and Conditions</label>
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block">Sign up</button>
+            <button type="submit" class="btn-lg btn btn-primary btn-rounded btn-block" name="lb_cus_register" id="lb_cus_register">Sign up</button>
         </form>
         <hr>
 
@@ -62,5 +76,11 @@
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/lb_customer.js"></script>
+<!-- <script>
+    $(document).ready(function(){
+    $(#test).html("<b>Hello world</b>");
+    });
+</script> -->
 </body>
 </html>
