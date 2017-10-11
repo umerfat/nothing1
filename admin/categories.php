@@ -33,23 +33,38 @@
                                 </div>
                             </div>
                             <div class="item form-group">
-                                <div class="col-md-3 col-sm-12 col-xs-12">
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary"
+                                            type="reset">Reset</button>
+                                    <button id="submit" name="submit_category"
+                                            type="submit" class="btn
+                                            btn-success">Add Category
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="ln_solid"></div>
+                        <form class="form-label-left" method="post"
+                              id="add-sub-category-form">
+                            <div class="item form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
                                     <input id="name" class="form-control col-md-7
-                                    col-xs-12" name="cat_name" placeholder="e.g Mason"
+                                    col-xs-12" name="cat_name" placeholder="Add Subcategory"
                                            type="text">
                                 </div>
-                                <div class="col-md-3 col-sm-12 col-xs-12">
+                            </div>
+                            <div class="item form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
                                     <select class="form-control" name="category" required>
-                                        <option value="">Choose Sub Category</option>
+                                        <option value="">Choose Category</option>
                                         <option value="1">Mason</option>
                                         <option value="2">Carpenter</option>
                                         <option value="3">Farmer</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="clearfix"></div>
                             <div class="item form-group">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <button class="btn btn-primary"
                                             type="reset">Reset</button>
                                     <button id="submit" name="submit_category"
