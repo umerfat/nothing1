@@ -4102,13 +4102,23 @@ table th {
 
 .area-selecting {
   float: left;
+<<<<<<< HEAD
   width: 33.33%;
+=======
+>>>>>>> 6111cfff95ce055b5475820fb644b91cbf1178d0
 }
 
 .area-selecting select {
   margin-bottom: 0;
 }
 
+<<<<<<< HEAD
+=======
+.bootstrap-datetimepicker-widget.dropdown-menu{
+  z-index:1151 !important;
+}
+
+>>>>>>> 6111cfff95ce055b5475820fb644b91cbf1178d0
 .single-product .price del {
   display: inline-block;
   margin-bottom: 0;
