@@ -34,7 +34,7 @@
 
                 <ul class="product-actions clearfix">
                     <li>
-                        <a href="#" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
+                        <a href="checkout.php" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
                     </li>
                 </ul>
             </div> <!-- end col product description -->

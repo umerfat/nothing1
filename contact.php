@@ -3,17 +3,17 @@
 <?php include "includes/nav.php"; ?>
 
 <?php
-if($_POST['sendEmail'])
+if(isset($_POST['sendEmail']))
     {
     $recipient_email    = "umerfat@gmail.com"; //recepient
-    $from_email         = "umerhurrah@kwiqpick.com"; //from email using site domain.
-    $subject            = $_POST['cus_sub']; //email subject line
-    $sender_name    = "Kwiqpick";
-    $sender_email   = filter_var($_POST['cus_mail'], FILTER_SANITIZE_STRING); //recepient
-    $sender_message = filter_var($_POST['mailBody'], FILTER_SANITIZE_STRING); //capture message
+    $sender_subject     = htmlentities($_POST['sender_subject']); //email subject line
+    $sender_name        = htmlentities($_POST['sender_name']);
+
+    $sender_email       = filter_var($_POST['sender_mail'], FILTER_SANITIZE_STRING); //recepient
+    $sender_message     = filter_var($_POST['sender_message'],FILTER_SANITIZE_STRING); //capture message
     $boundary = md5(uniqid(time()));
-    $headers = "MIME-Version: 1.0\r\n"; 
-    $headers .= "From: <".$from_email.">"."\r\n"; 
+    $headers  = "MIME-Version: 1.0\r\n"; 
+    $headers .= "From: <".$sender_email.">"."\r\n"; 
     $headers .= "Reply-To: <".$sender_email.">" . "\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary = ".$boundary."\r\n\r\n"; 
     //message text
@@ -33,15 +33,17 @@ if($_POST['sendEmail'])
     //     $body = $sender_message;
     // }
 
-     $sentMail = mail($recipient_email, $subject, $body, $headers);
+     $sentMail = @mail($recipient_email, $sender_subject, $body, $headers);
     if($sentMail) //output success or failure messages
     {   
         $messageS = " Thank you for your email";
-        header("Location: index.php?msgS={$messageS}");
+        echo $messageS;
+        //header("Location: index.php?msgS={$messageS}");
     }
     else{
         $messageF =  "Could not send mail! Please check your PHP mail configuration.";
-        header("Location: index.php?msgF={$messageF}");
+        echo $messageF;
+        //header("Location: index.php?msgF={$messageF}");
     }
   }
 ?>
@@ -57,19 +59,19 @@ if($_POST['sendEmail'])
 
           <div class="col-md-8">
             <h5 class="uppercase mb-30">Send Us Message</h5>
-            <form id="contact-form" action="#" name="contact-form">
+            <form id="contact-form" action="" name="contact-form" method="POST">
               <div class="contact-name">
-                <input name="cus_name" id="cus_name" type="text" placeholder="Name*">
+                <input name="sender_name" id="sender_name" type="text" placeholder="Name*">
               </div>
               <div class="contact-email">
-                <input name="cus_mail" id="cus_mail" type="email" placeholder="E-mail*">
+                <input name="sender_mail" id="sender_mail" type="email" placeholder="E-mail*">
               </div>
               <div class="contact-subject">
-                <input name="cus_subject" id="subject" type="text" placeholder="Subject">
+                <input name="sender_subject" id="sender_subject" type="text" placeholder="Subject">
               </div>                
 
-              <textarea name="cus_contact" id="cus_contact" placeholder="Message" rows="9"></textarea>
-              <input type="submit" class="btn btn-lg btn-color btn-submit" value="Submit" id="submit-message" name="sendEmail">
+              <textarea name="sender_message" id="sender_message" placeholder="Message" rows="9"></textarea>
+              <input type="submit" class="btn btn-lg btn-color btn-submit" value="Submit" id="sendEmail" name="sendEmail">
               <div id="msg" class="message"></div>
             </form>
           </div> <!-- end col -->

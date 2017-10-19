@@ -111,7 +111,7 @@
                                                 foreach($sub_cat_arr as $sub_cat_row):
                                                     $sub_cat_id = $sub_cat_row['sub_cat_id'];
                                                 $sub_cat_name = $sub_cat_row['sub_cat_name'];
-                                                echo " <li><a href='#'>{$sub_cat_name}</a></li>";
+                                                echo " <li><a href='catalog.php'>{$sub_cat_name}</a></li>";
                                                 $sub_cat_arr = null;
                                                     endforeach;
                                                 echo "</ul>";
