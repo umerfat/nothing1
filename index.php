@@ -15,6 +15,16 @@
                     <h2 class="heading uppercase">
                         <small>Best Labours</small>
                     </h2>
+                  <!--   <?php
+                    $get_url = "labourDetails.php/?name=umer&key=234";
+                    $name  = base64_encode('123');
+                    //echo "$name";
+                    //echo base64_decode($name);
+                    //$x='umer';
+                    echo '<a href="labourDetails.php?name=' .$name. '"><button>Umer</button></a>';
+                    ?>
+ -->
+                    
                 </div>
             </div>
             <div class="row row-10">
@@ -38,7 +48,7 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="labourDetails.php">
+                            <a href="labourDetails.php?l_id=<?php echo base64_encode($labour_id);?>">
                                 <img src="IMAGES/LABOUR_IMAGES/<?php echo $labourImage; ?>" alt="">
 
                             </a>
@@ -47,7 +57,7 @@
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="labourDetails.php" class="product-quickview">Quick View</a>
+                            <a href="labourDetails.phpl_id=<?php echo base64_encode($labour_id);?>" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">

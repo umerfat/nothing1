@@ -24,7 +24,7 @@
                 </span>
                 <span class="price">
                   <del>
-                    <span>Rs.1550.00</span>
+                    <span>Rs. 1550.00</span>
                   </del>
                   <ins>
                     <span class="ammount">Rs.1250.00</span>
