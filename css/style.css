@@ -3405,7 +3405,7 @@ textarea:-ms-input-placeholder {
 }
 
 select {
-  border: none;
+  border: 1px solid #ebebeb;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

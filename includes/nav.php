@@ -133,7 +133,7 @@
                             </li>
                             <?php
                             if (isset($_SESSION['customer_username'])){
-                                echo '<li class="dropdown">
+                                echo '<li class="dropdown hidden-md hidden-lg">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
                                 <ul class="dropdown-menu megamenu">
                                     <li>
@@ -154,10 +154,10 @@
                             </li>';
                             }
                             else{
-                                echo ' <li class="dropdown">
+                                echo ' <li class="dropdown hidden-md hidden-lg">
                                           <a href="register.php">Sign Up</a>
                                       </li>
-                                      <li class="dropdown">
+                                      <li class="dropdown hidden-md hidden-lg">
                                         <a href="login.php">Login</a>
                                       </li>';
                                 }
