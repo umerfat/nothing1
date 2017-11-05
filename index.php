@@ -38,16 +38,17 @@
                 <div class="col-md-3 col-xs-6 animated-from-left">
                     <div class="product-item">
                         <div class="product-img">
-                            <a href="labourDetails.php">
-                                <img src="IMAGES/LABOUR_IMAGES/<?php echo $labourImage; ?>" alt="">
-
-                            </a>
+                        <!-- <form method="POST" action="labourDetails.php">
+                        <input type="hidden" name="labour_id" value="<?php echo $labour_id ?>"> -->
+                            <a href="labourDetails.php?labour_id=<?php echo $labour_id?>"> 
+                            <img src="IMAGES/LABOUR_IMAGES/<?php echo $labourImage; ?>" alt="">
+                            </a><!-- </form> -->
                             <div class="product-actions">
                                 <a href="" class="product-add-to-wishlist" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist">
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </div>
-                            <a href="labourDetails.php" class="product-quickview">Quick View</a>
+                            <a href="labourDetails.php?labour_id=<?php echo $labour_id?>" class="product-quickview">Quick View</a>
                         </div>
 
                         <div class="product-details">

@@ -9,16 +9,29 @@
     <div class="container relative">
         <div class="row">
 
+        <?php
+        $connection;
+        if (isset($_GET['labour_id'])) {
+            $labour_id = $_GET['labour_id'];
+        }
+        $query_select = "SELECT * FROM labour WHERE labour_id = '$labour_id'";
+        $query_result = mysqli_query($connection,$query_select);
+        $row = mysqli_fetch_assoc($query_result);
+        $labour_id   = trim($row['labour_id']);
+        $firstName   = trim($row['labour_first_name']);
+        $lastName    = trim($row['labour_last_name']);
+        $labourImage = trim($row['labour_image']);
+        ?>
             <div class="col-sm-6 col-xs-12 mb-60">
                 <div class="gallery-cell">
-                    <a href="IMAGES/labour/labour6.jpeg" class="lightbox-img">
-                        <img src="IMAGES/labour/labour6.jpeg" alt="" />
+                    <a href="IMAGES/LABOUR_IMAGES/<?php echo $labourImage;?>" class="lightbox-img">
+                        <img src="IMAGES/LABOUR_IMAGES/<?php echo $labourImage;?>" alt="" />
                     </a>
                 </div>
             </div> <!-- end col img slider -->
 
             <div class="col-sm-6 col-xs-12 product-description-wrap">
-                <h1 class="product-title">Louis Lane</h1>
+                <h1 class="product-title"><?php echo $firstName." ".$lastName?></h1>
                 <span class="rating">
                   <a href="javascript::void(0)">3 Reviews</a>
                 </span>
@@ -27,7 +40,7 @@
                     <span>Rs.1550.00</span>
                   </del>
                   <ins>
-                    <span class="ammount">Rs.1250.00</span>
+                    <span class="ammount">Rs.1250.00<?php echo $labour_id ;?></span>
                   </ins>
                 </span>
                 <p class="product-description">Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles.</p>
