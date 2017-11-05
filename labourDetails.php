@@ -34,7 +34,7 @@
 
                 <ul class="product-actions clearfix">
                     <li>
-                        <a href="checkout.php" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
+                        <a href="labourInfo.php" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
                     </li>
                 </ul>
             </div> <!-- end col product description -->
@@ -81,10 +81,10 @@
                                     <th>Category</th>
                                     <td>Carpenter</td>
                                 </tr>
-                                <tr>
+                               <!--  <tr>
                                     <th>Skills</th>
                                     <td>Carpenter</td>
-                                </tr>
+                                </tr> -->
                                 </tbody>
                             </table>
                         </div>

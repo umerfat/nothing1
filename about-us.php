@@ -14,8 +14,12 @@
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <h4 class="about-intro uppercase">about our shop</h4>
+            <h4 class="about-intro uppercase">About Daily Labour</h4>
             <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
+            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de rlería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
+            <h4 class="about-intro uppercase">Why DailyLabour?</h4>
+            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de rlería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
+            <p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de rlería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.</p>
           </div>
         </div>
       </div>
@@ -38,13 +42,13 @@
         </div>
 
         <div class="row">
-          <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
+          <div class="col-md-2 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="IMAGES/team/member1.jpeg" alt="">
+                <img src="IMAGES/team/member1.png" alt="">
               </div>
-              <h4 class="team-title uppercase">Monica Geller</h4>
-              <span>CEO of Company</span>
+              <h4 class="team-title uppercase">Umer Hurrah</h4>
+              <span>Founder And Developer</span>
               <div class="team-details">
                 <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá.</p>
                 <div class="social-icons rounded">
@@ -57,13 +61,13 @@
             </div>
           </div> <!-- end team member -->
 
-          <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
+          <div class="col-md-2 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="IMAGES/team/member2.jpg" alt="">
+                <img src="IMAGES/team/member2.png" alt="">
               </div>
-              <h4 class="team-title uppercase">Chandler Bing</h4>
-              <span>Art Director</span>
+              <h4 class="team-title uppercase">Shahid Ahmad</h4>
+              <span>Marketting Director</span>
               <div class="team-details">
                 <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá .</p>
                 <div class="social-icons rounded">
@@ -76,13 +80,13 @@
             </div>
           </div> <!-- end team member -->
 
-          <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
+          <div class="col-md-2 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="IMAGES/team/member3.jpeg" alt="">
+                <img src="IMAGES/team/member3.png" alt="">
               </div>
-              <h4 class="team-title uppercase">Joey Tribiani</h4>
-              <span>HR Manager</span>
+              <h4 class="team-title uppercase">Rifat Gulshan</h4>
+              <span>Cofounder </span>
               <div class="team-details">
                 <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá.</p>
                 <div class="social-icons rounded">
@@ -94,14 +98,13 @@
               </div> 
             </div>
           </div> <!-- end team member -->
-
-          <div class="col-md-3 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
+          <div class="col-md-2 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
             <div class="team-member">
               <div class="team-img">
-                <img src="IMAGES/team/member4.jpeg" alt="">
+                <img src="IMAGES/team/member4.png" alt="">
               </div>
-              <h4 class="team-title uppercase">Ross Geller</h4>
-              <span>Lead Designer</span>
+              <h4 class="team-title uppercase">Adil Rehman</h4>
+              <span>Finance Director</span>
               <div class="team-details">
                 <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá.</p>
                 <div class="social-icons rounded">
@@ -113,7 +116,24 @@
               </div>             
             </div>
           </div> <!-- end team member -->
-
+          <div class="col-md-2 col-xs-6 col-xxs-12 team-wrap mb-40 animated-from-left">
+            <div class="team-member">
+              <div class="team-img">
+                <img src="IMAGES/team/member5.png" alt="">
+              </div>
+              <h4 class="team-title uppercase">Vinod Kumar</h4>
+              <span>Programming Head</span>
+              <div class="team-details">
+                <p>Es un hecho establecido hace demasiado tiempo que un lector se distraerá.</p>
+                <div class="social-icons rounded">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-google-plus"></i></a>
+                  <a href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>             
+            </div>
+          </div> <!-- end team member -->
         </div>
       </div>
     </section> <!-- end our team -->

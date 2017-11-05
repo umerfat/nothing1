@@ -21,8 +21,12 @@
                     <div class="x_content">
 
                         <!--Calling php function for inserting categories-->
-                        <?php insert_category(); ?>
-
+                        <?php if (isset($_POST['submit_category'])) {
+                             insert_category();
+                        } ?>
+                        <?php if (isset($_POST['submit_sub_category'])) {
+                             insert_sub_category();
+                        } ?>
                         <form class="form-label-left" method="post"
                               id="add-category-form">
                             <div class="item form-group">
@@ -41,25 +45,33 @@
                                             btn-success">Add Category
                                     </button>
                                 </div>
-                            </div>
+                        </div>
                         </form>
                         <div class="ln_solid"></div>
-                        <form class="form-label-left" method="post"
+                        <form class="form-label-left" method="POST"
                               id="add-sub-category-form">
                             <div class="item form-group">
                                 <div class="col-md-4 col-sm-12 col-xs-12">
                                     <input id="name" class="form-control col-md-7
-                                    col-xs-12" name="cat_name" placeholder="Add Subcategory"
+                                    col-xs-12" name="sub_cat_name" placeholder="Add Subcategory"
                                            type="text">
                                 </div>
                             </div>
                             <div class="item form-group">
                                 <div class="col-md-4 col-sm-12 col-xs-12">
-                                    <select class="form-control" name="category" required>
-                                        <option value="">Choose Category</option>
-                                        <option value="1">Mason</option>
-                                        <option value="2">Carpenter</option>
-                                        <option value="3">Farmer</option>
+                                    <select class="form-control" name="category_name" required>
+                                        <option value="">All Categories</option>
+                                        <?php
+                                        global $connection;
+                                        $select_sub_cat = "SELECT cat_id,cat_name FROM tbl_category";
+                                        $result_sub_cat = mysqli_query($connection,$select_sub_cat);
+                                        while($row = mysqli_fetch_assoc($result_sub_cat)){
+                                        ?>
+                                        <option value="<?php echo trim($row['cat_id']); ?>"><?php echo trim($row['cat_name'])?></option>
+                                        <?php
+                                        }
+                                         ?>
+                                        <!-- <option value="3">Farmer</option> -->
                                     </select>
                                 </div>
                             </div>
@@ -67,9 +79,9 @@
                                 <div class="col-md-4">
                                     <button class="btn btn-primary"
                                             type="reset">Reset</button>
-                                    <button id="submit" name="submit_category"
+                                    <button id="submit" name="submit_sub_category"
                                             type="submit" class="btn
-                                            btn-success">Add Category
+                                            btn-success">Add Sub Category0.
                                     </button>
                                 </div>
                             </div>

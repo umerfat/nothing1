@@ -411,11 +411,4 @@
 </section>
 
 <?php include "includes/footer.php"; ?>
-<script>
-    $('#datepicker-area').datetimepicker({
-        format: 'DD.MM.YYYY'
-    });
-    $('#datepicker-area-2').datetimepicker({
-        format: 'DD.MM.YYYY'
-    });
-</script>
+

@@ -91,7 +91,7 @@
                                         <div class="megamenu-wrap">
                                             <div class="row">
                                             <?php
-                                            $select_cat  = "SELECT * FROM categories";
+                                            $select_cat  = "SELECT * FROM tbl_category";
                                             $result_cat = mysqli_query($connection, $select_cat);
                                             while($row = mysqli_fetch_assoc($result_cat)){
                                                 $cat_arr[] = $row;
@@ -103,7 +103,7 @@
                                                 echo "<div class='col-md-3 megamenu-item'>";
                                                 echo "<h6>{$cat_name}</h6>";
                                                 echo "<ul class='menu-list'>";
-                                                $select_sub_cat = "SELECT * FROM tbl_sub_categories WHERE cat_id = $cat_id";
+                                                $select_sub_cat = "SELECT * FROM tbl_sub_category WHERE cat_id = $cat_id";
                                                 $result_sub_cat = mysqli_query($connection, $select_sub_cat);
                                                 while($sub_row = mysqli_fetch_assoc($result_sub_cat)){
                                                     $sub_cat_arr[] = $sub_row;
@@ -118,15 +118,6 @@
                                                 echo "</div>"; 
                                             endforeach;
                                             ?>
-
-                                               <!--  <div class="col-md-3 megamenu-item">
-                                                    <h6>General Labours</h6>
-                                                    <ul class="menu-list">
-                                                        <li><a href="#">Construction Works</a></li>
-                                                        <li><a href="#">Agricultural Works</a></li>
-                                                        <li><a href="#">Construction And Agricultural Works</a></li>
-                                                    </ul>
-                                                </div> -->
                                             </div>
                                         </div>
                                     </li>
@@ -140,30 +131,37 @@
                             <li class="dropdown">
                                 <a href="contact.php">Contact</a>
                             </li>
-
-                            <!-- <li class="dropdown">
-                                <a href="#">My Account</a>
-                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown"></i>
-                                <ul class="dropdown-menu">
-                                    <li><a href="">Login</a></li>
-                                    <li><a href="">Sign Up</a></li>
-                                </ul>
-                            </li> -->
-                            
-                            <li class="mobile-links">
-                                <ul>
+                            <?php
+                            if (isset($_SESSION['customer_username'])){
+                                echo '<li class="dropdown hidden-md hidden-lg">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account</a>
+                                <ul class="dropdown-menu megamenu">
                                     <li>
+                                        <div class="megamenu-wrap">
+                                            <div class="row">
+                                                <div class="col-md-3 megamenu-item">
+                                                    <ul class="menu-list">
+                                                        <li><a href="#">Profile</a></li>
+                                                        <li><a href="#">Wishlist</a></li>
+                                                        <li><a href="#">Bookings</a></li>
+                                                        <li><a href="logout.php">Logout</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>';
+                            }
+                            else{
+                                echo ' <li class="dropdown hidden-md hidden-lg">
+                                          <a href="register.php">Sign Up</a>
+                                      </li>
+                                      <li class="dropdown hidden-md hidden-lg">
                                         <a href="login.php">Login</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">My Account</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">My Wishlist</a>
-                                    </li>
-                                </ul>
-                            </li>
-
+                                      </li>';
+                                }
+                            ?>
                         </ul> <!-- end menu -->
                     </div> <!-- end collapse -->
                 </div> <!-- end col -->

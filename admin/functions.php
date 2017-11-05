@@ -58,25 +58,26 @@ function validation_success($success_message){
 
 //Add labour
 function add_labour(){
-
     global $connection;
     if (isset($_POST['create_labour'])){
-        $labour_category_id  = clean($_POST['category']);
+        $labour_cat_id       = clean($_POST['category']);
         $labour_first_name   = clean($_POST['first_name']);
         $labour_last_name    = clean($_POST['last_name']);
         $labour_govt_id      = clean($_POST['govt_id']);
-        $labour_phone_number = clean($_POST['phone_number']);
+        $labour_phone        = clean($_POST['phone_number']);
         $labour_state        = clean($_POST['state']);
         $labour_address      = clean($_POST['address']);
         $labour_email        = clean($_POST['email']);
         $labour_status       = clean($_POST['status']);
+        $labour_charges      = clean($_POST['charges']);
+        $labour_long_descript= clean($_POST['long_description']);
+        $labour_short_descript= clean($_POST['short_description']);
         //$labour_date         = date("F j, Y");
         $labour_image        = $_FILES['image']['name'];
         $labour_tmp_image    = $_FILES['image']['tmp_name'];
         // $labour_content      = $_POST['content'];
         // $labour_content      = str_replace("'", "''", $post_content);
         move_uploaded_file($labour_tmp_image, "../IMAGES/LABOUR_IMAGES/$labour_image");
-
         // $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name, labour_govt_id, labour_phone,labour_state,labour_address,labour_email, labour_status, labour_creation_date, labour_image) ";
         // $query .= "VALUES('{$labour_category_id}', '{$labour_first_name}', '{$labour_last_name}', '{$labour_govt_id}','{$labour_phone_number}','{$labour_state}','{$labour_address}', '{$labour_email}', '{$labour_status}', '{$labour_date}', '{$labour_image}')";
 
@@ -95,16 +96,37 @@ function add_labour(){
         //     </div>
         //     ";
         // }
-        $query  = "INSERT INTO labour(labour_category_id, labour_first_name, labour_last_name,labour_govt_id,labour_phone,labour_state,labour_address,labour_email, labour_status, labour_image) ";
-        $query .= "VALUES(?, ?, ?, ?,?,?,?, ?, ?, ?)";
-        $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, "isssssssss", $labour_category_id, $labour_first_name, $labour_last_name, $labour_govt_id, $labour_phone_number, $labour_state, $labour_address, $labour_email, $labour_status, $labour_image);
-        $insert_query = mysqli_stmt_execute($stmt);
-        if (!$insert_query){
+        $query_labour  = "INSERT INTO tbl_labour(cat_id, labour_status) ";
+        $query_labour .= "VALUES(?, ?)";
+        $stmt = mysqli_prepare($connection, $query_labour);
+        mysqli_stmt_bind_param($stmt, "ii", $labour_cat_id, $labour_status);
+        $insert_query_labour = mysqli_stmt_execute($stmt);
+        $sel = "SELECT LAST_INSERT_ID()";
+        $stmt = '';
+        $stmt = mysqli_prepare($connection,$sel);
+        mysqli_stmt_bind_result($stmt,$labour_id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_fetch($stmt);
+         //$labour = mysqli_fetch_row($labour_res);
+         //echo ($labour[0]);
+        //exit();
+        
 
-            die("Query failed " . mysqli_error($connection));
-        }
-        else{
+        if ($insert_query_labour){
+            $query_labour_info  = "INSERT INTO tbl_labour_info(labour_id, first_name, last_name, adhar_or_election_id, labour_image, long_description, short_description, labour_charges) ";
+            $query_labour_info .= "VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = '';
+            $stmt = mysqli_prepare($connection, $query_labour_info);
+            mysqli_stmt_bind_param($stmt, "ississsi", $labour_id, $labour_first_name, $labour_last_name, $labour_govt_id, $labour_image, $labour_long_descript, $labour_short_descript, $labour_charges);
+            $insert_query_labour_info = mysqli_stmt_execute($stmt);
+            //die("Query failed " . mysqli_error($connection));
+            $query_labour_address  = "INSERT INTO tbl_labour_address(labour_id, labour_email, labour_phone, labour_address, labour_state) ";
+            $query_labour_address .= "VALUES(?, ?, ?, ?, ?)";
+            $stmt = '';
+            $stmt = mysqli_prepare($connection, $query_labour_address);
+            mysqli_stmt_bind_param($stmt, "issss", $labour_id, $labour_email, $labour_phone, $labour_address, $labour_state);
+            $insert_query_labour_address = mysqli_stmt_execute($stmt);
+            //print_r($stmt);
             echo "
             <div class='col-md-12 col-xs-12'>
               <div class='alert alert-success alert-dismissable fade in'>
@@ -120,7 +142,7 @@ function add_labour(){
 function add_labour_category(){
 
     global $connection;
-    $query = "SELECT * FROM categories";
+    $query = "SELECT * FROM tbl_category";
     $category_query = mysqli_query($connection, $query);
     if (!$category_query){
 
@@ -186,30 +208,41 @@ function insert_category(){
 
         if ($cat_name == "" || empty($cat_name)) {
 
-            echo "
-            <div class='col-md-12'>
-              <div class='alert alert-danger alert-dismissable fade in'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                <strong>This field cannot be empty.!</strong>
-              </div>
-            </div>
-            ";
+            echo validation_errors("This Field can't be empty");
         } else {
-            $query = "INSERT INTO categories(cat_name) ";
+            $query = "INSERT INTO tbl_category(cat_name) ";
             $query .= "VALUES('{$cat_name}')";
             $create_category_query = mysqli_query($connection, $query);
             if (!$create_category_query) {
 
                 die("Query failed " . mysqli_error($connection));
             } else {
-                echo "
-            <div class='col-md-12'>
-              <div class='alert alert-success alert-dismissable fade in'>
-                <a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-                <strong>Category inserted successfully.!</strong>
-              </div>
-            </div>
-            ";
+                echo validation_success("Category saved successfully");
+            }
+        }
+    }
+}
+
+function insert_sub_category(){
+
+    global $connection;
+    if (isset($_POST['submit_sub_category'])) {
+
+        $sub_cat_name = $_POST['sub_cat_name'];
+        $cat_id       = $_POST['category_name'];
+
+        if ($sub_cat_name == "" || empty($sub_cat_name)) {
+
+            echo validation_errors("Sub cat Field can't be empty");
+        } else {
+            $query = "INSERT INTO tbl_sub_category(cat_id,sub_cat_name) ";
+            $query .= "VALUES('{$cat_id}','{$sub_cat_name}')";
+            $create_category_query = mysqli_query($connection, $query);
+            if (!$create_category_query) {
+
+                die("Query failed " . mysqli_error($connection));
+            } else {
+                echo validation_success("Sub category saved successfully");
             }
         }
     }
@@ -218,7 +251,7 @@ function insert_category(){
 function findAllCategories(){
 
     global $connection;
-    $query = "SELECT * FROM categories";
+    $query = "SELECT * FROM tbl_category";
     $select_categories = mysqli_query($connection, $query);
     while ($row = mysqli_fetch_assoc($select_categories)) {
 

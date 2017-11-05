@@ -1568,10 +1568,6 @@ ol.numbers {
   padding-right: 20px;
 }
 
-.top-bar-account > li > a {
-  color: #444444;
-}
-
 .top-bar-account > li:last-child {
   padding-right: 0;
 }
@@ -1625,11 +1621,6 @@ ol.numbers {
   margin: 0 7px 0 10px;
 }
 
-.top-bar-links .top-bar-link:last-child a:after {
-  content: "";
-  border-right: none;
-  margin: 0;
-}
 
 /*-------------------------------------------------------*/
 /* Navigation Mobile Styles
@@ -3414,7 +3405,7 @@ textarea:-ms-input-placeholder {
 }
 
 select {
-  border: none;
+  border: 1px solid #ebebeb;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

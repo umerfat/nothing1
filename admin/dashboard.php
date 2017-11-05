@@ -97,7 +97,7 @@
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-folder-o"></i></div>
                                 <?php
-                                $category_count = recordCount('categories');
+                                $category_count = recordCount('tbl_category');
                                 echo "<div class='count'>{$category_count}</div>";
                                 ?>
                                 <h3>Categories</h3>

@@ -8,43 +8,52 @@ if (isset($_POST['create_labour'])) {
       <div class="item form-group">
           <div class="col-md-6 col-sm-12 col-xs-12">
               <input id="FirstName" class="form-control col-md-7 col-xs-12"
-                     name="first_name" placeholder="e.g Umer " type="text" required>
+                     name="first_name" placeholder="First Name " type="text" required>
           </div>
       </div>
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <input id="LastName" class="form-control col-md-7 col-xs-12"
-                   name="last_name" placeholder="e.g Hurrah" type="text" required />
+                   name="last_name" placeholder="Last Name" type="text" required />
         </div>
     </div>
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <input id="GovtId" class="form-control col-md-7 col-xs-12"
-                   name="govt_id" placeholder="e.g Adhar ID or Election ID or Passport Number" type="text" required>
+                   name="govt_id" placeholder="Adhar ID or Election ID or Passport Number" type="text" required>
         </div>
     </div>
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <input id="PhoneNumber" class="form-control col-md-7 col-xs-12"
-                   name="phone_number" placeholder="e.g 9902369852" type="text" required>
-        </div>
-    </div>
-    <div class="item form-group">
-        <div class="col-md-6 col-sm-12 col-xs-12">
-            <input type="text" id="state" name="state" class="form-control col-md-7
-            col-xs-12" placeholder="e.g Jammu And Kashmir" required>
-        </div>
-    </div>
-    <div class="item form-group">
-        <div class="col-md-6 col-sm-12 col-xs-12">
-            <input type="text" id="address" name="address" class="form-control col-md-7
-            col-xs-12" placeholder="e.g Lal Chowk Srinagar" required>
+                   name="phone_number" placeholder="Phone Number" type="text" required>
         </div>
     </div>
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <input type="email" id="Email" name="email" class="form-control col-md-7
-            col-xs-12" placeholder="e.g vakadu10@gmail.com" required>
+            col-xs-12" placeholder="Email" required>
+        </div>
+    </div>
+    <div class="item form-group">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <input type="text" id="state" name="state" class="form-control col-md-7
+            col-xs-12" placeholder="State" required>
+        </div>
+    </div>
+    <div class="item form-group">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <input type="text" id="address" name="address" class="form-control col-md-7
+            col-xs-12" placeholder="Full Address" required>
+        </div>
+    </div>
+    <div class="item form-group">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <select class="form-control" name="status">
+                <option value="0">Select Status</option>
+                <option value="1">Publish</option>
+                <option value="0">Draft</option>
+            </select>
         </div>
     </div>
     <div class="item form-group">
@@ -55,26 +64,11 @@ if (isset($_POST['create_labour'])) {
             </select>
         </div>
     </div>
-
-  <!--   <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="author">Author <span class="required">*</span>
-        </label>
-        <div class="col-md-10 col-sm-12 col-xs-12">
-            <input type="text" id="author" name="author" class="form-control col-md-7
-            col-xs-12" placeholder="Author Name" required>
-        </div>
-    </div> -->
-
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
-            <select class="form-control" name="status">
-                <option value="draft">Select Status</option>
-                <option value="publish">Publish</option>
-                <option value="draft">Draft</option>
-            </select>
+            <input type="text" id="charges" name="charges" class="form-control col-md-7 col-xs-12" placeholder="Labour Charges" required>
         </div>
     </div>
-
     <div class="item form-group">
         <div class="col-md-6 col-sm-12 col-xs-12">
             <input type="file" id="image" name="image" class="form-control col-md-7
@@ -91,13 +85,16 @@ if (isset($_POST['create_labour'])) {
         </div>
     </div> -->
 
-   <!--  <div class="item form-group">
-        <label class="control-label col-md-2 col-sm-12 col-xs-12" for="content">Content <span class="required">*</span>
-        </label>
-        <div class="col-md-10 col-sm-12 col-xs-12">
-            <textarea name="content" id="content" cols="30" rows="6" class="form-control col-md-7 col-xs-12" placeholder="Content" required></textarea>
+    <div class="item form-group">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <textarea name="long_description" id="long_description" cols="30" rows="6" class="form-control col-md-7 col-xs-12" placeholder="Long Description" required></textarea>
         </div>
-    </div> -->
+    </div>
+    <div class="item form-group">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+            <textarea name="short_description" id="short_description" cols="30" rows="6" class="form-control col-md-7 col-xs-12" placeholder="Short Description" required></textarea>
+        </div>
+    </div>
     <div class="clearfix"></div>
     <div class="ln_solid"></div>
     <div class="form-group">

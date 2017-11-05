@@ -6,9 +6,7 @@
         <th>F Name</th>
         <th>L Name</th>
         <th>Category</th>
-        <th>Govt. ID</th>
         <th>Phone Number</th>
-        <th>Address</th>
         <th>Email</th>
         <th>Registration Date</th>
         <th>Take Action</th>
@@ -18,7 +16,7 @@
 
     <?php
     // $test = "select * from labour";
-    $query  = "SELECT labour.labour_id, labour.labour_category_id,labour.labour_first_name, ";
+    $query  = "SELECT tbl_labour.labour_id, labour.labour_category_id,labour.labour_first_name, ";
     $query .= "labour.labour_last_name, labour.labour_govt_id, labour.labour_phone, ";
     $query .= "labour.labour_address, labour.labour_email, labour.labour_creation_date,labour.labour_image, ";
     $query .= "categories.cat_id, categories.cat_name ";
