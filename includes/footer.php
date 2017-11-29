@@ -12,7 +12,7 @@
                             <li><a href="about-us.php">About us</a></li>
                             <li><a href="#">Business with us</a></li>
                             <li><a href="#">Delivery information</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
+                            <li><a href="terms-cond.php">Terms &amp; Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                             <li><a href="contact.php">Contact us</a></li>
                             <li><a href="#">Track order</a></li>
                             <li><a href="faq.php">F.A.Q</a></li>
-                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="privacy.php">Privacy policy</a></li>
                             <li><a href="#">Returns</a></li>
                         </ul>
                     </div>
@@ -99,8 +99,14 @@
 
 <!-- jQuery Scripts -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/moment.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/validator.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
 
 </body>

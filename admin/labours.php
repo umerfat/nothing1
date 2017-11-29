@@ -5,7 +5,6 @@
 <?php include "includes/sidebar_menu.php"; ?>
 
 <?php include "includes/top_nav.php"; ?>
-
 <!-- page content -->
 <div class="right_col" role="main">
     <div class="">

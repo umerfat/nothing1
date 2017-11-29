@@ -21,23 +21,23 @@
                     <div class="x_content">
 
                         <!--Calling php function for inserting categories-->
-                        <?php insert_category(); ?>
-
-                        <form class="form-horizontal form-label-left" method="post"
+                        <?php if (isset($_POST['submit_category'])) {
+                             insert_category();
+                        } ?>
+                        <?php if (isset($_POST['submit_sub_category'])) {
+                             insert_sub_category();
+                        } ?>
+                        <form class="form-label-left" method="post"
                               id="add-category-form">
                             <div class="item form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12"
-                                       for="category">Add Category <span
-                                            class="required">*</span>
-                                </label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
                                     <input id="name" class="form-control col-md-7
                                     col-xs-12" name="cat_name" placeholder="e.g Mason"
                                            type="text">
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-3">
+                            <div class="item form-group">
+                      <div class="col-md-6">
                                     <button class="btn btn-primary"
                                             type="reset">Reset</button>
                                     <button id="submit" name="submit_category"
@@ -45,9 +45,48 @@
                                             btn-success">Add Category
                                     </button>
                                 </div>
-                            </div>
-                            <div class="ln_solid"></div>
+                        </div>
                         </form>
+                        <div class="ln_solid"></div>
+                        <form class="form-label-left" method="POST"
+                              id="add-sub-category-form">
+                            <div class="item form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <input id="name" class="form-control col-md-7
+                                    col-xs-12" name="sub_cat_name" placeholder="Add Subcategory"
+                                           type="text">
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
+                                    <select class="form-control" name="category_name" required>
+                                        <option value="">All Categories</option>
+                                        <?php
+                                        global $connection;
+                                        $select_sub_cat = "SELECT cat_id,cat_name FROM tbl_category";
+                                        $result_sub_cat = mysqli_query($connection,$select_sub_cat) or printf($connection);
+                                        while($row = mysqli_fetch_assoc($result_sub_cat)){
+                                        ?>
+                                        <option value="<?php echo trim($row['cat_id']); ?>"><?php echo trim($row['cat_name'])?></option>
+                                        <?php
+                                        }
+                                         ?>
+                                        <!-- <option value="3">Farmer</option> -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item form-group">
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary"
+                                            type="reset">Reset</button>
+                                    <button id="submit" name="submit_sub_category"
+                                            type="submit" class="btn
+                                            btn-success">Add Sub Category
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="ln_solid"></div>
                         <?php
                         //update and include on clicking edit link
                         if (isset($_GET['edit'])){

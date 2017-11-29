@@ -1,12 +1,11 @@
-
-<?php
+<?php 
 //make database and function files global to all
 include "database.php";
-include "functions.php";
-if(empty($_SESSION['admin_username']))
-    {redirect("index.php");} ?>
-
-?>
+include "functions.php";?>
+<?php
+//$_SESSION['admin_username'] = 'umer';
+//if(empty($_SESSION['admin_username']))
+    //{redirect("index.php");} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@ if(empty($_SESSION['admin_username']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-    <title>Labour  Ease | Home</title>
+    <title>DailyLabour | Home</title>
     <link rel="icon" type="image/png" href="../images/labour.png">
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

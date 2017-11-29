@@ -37,14 +37,13 @@
                                 ?>
                                 <br>
                                 <?php
-                                $query = "SELECT * FROM labour WHERE labour_status = 'draft'";
+                                $query = "SELECT * FROM tbl_labour WHERE labour_status = 'draft'";
                                 $select_query = mysqli_query($connection, $query);
                                 $count = mysqli_num_rows($select_query);
                                 echo " <span class='count_bottom'><i class='green'>&nbsp;&nbsp;{$count} </i>&nbsp; Labours Unavailable</span>";
                                 ?>
                             </div>
                         </div>
-
                         <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 col-xs-12">
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-users"></i></div>
@@ -72,7 +71,7 @@
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-comments-o"></i></div>
                                 <?php
-                                $count = recordCount('customers');
+                                $count = recordCount('tbl_customer');
                                 echo "<div class='count'>{$count}</div>";
                                 ?>
                                 <h3>Customers</h3>
@@ -97,7 +96,7 @@
                             <div class="tile-stats">
                                 <div class="icon"><i class="fa fa-folder-o"></i></div>
                                 <?php
-                                $category_count = recordCount('categories');
+                                $category_count = recordCount('tbl_category');
                                 echo "<div class='count'>{$category_count}</div>";
                                 ?>
                                 <h3>Categories</h3>

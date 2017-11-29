@@ -1,5 +1,9 @@
 <?php include "admin/includes/database.php";?>
 <?php include "admin/functions.php";?>
+<?php
+//if(empty($_SESSION['customer_firstname']))redirect("index.php"); ?>
+
+<?php //if(remember_me()) redirect("index.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,8 +23,17 @@
     <link rel="stylesheet" href="css/font-icons.css">
     <link rel="stylesheet" href="css/sliders.css">
     <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/bootstrap-datetimepicker.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body class="relative">
+<!-- Preloader -->
+<div class="loader-mask">
+    <div class="loader">
+        <div></div>
+        <div></div>
+    </div>
+</div>

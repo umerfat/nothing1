@@ -6,9 +6,7 @@
         <th>F Name</th>
         <th>L Name</th>
         <th>Category</th>
-        <th>Govt. ID</th>
         <th>Phone Number</th>
-        <th>Address</th>
         <th>Email</th>
         <th>Registration Date</th>
         <th>Take Action</th>
@@ -17,32 +15,38 @@
     <tbody>
 
     <?php
-    // $test = "select * from labour";
-    $query  = "SELECT labour.labour_id, labour.labour_category_id,labour.labour_first_name, ";
-    $query .= "labour.labour_last_name, labour.labour_govt_id, labour.labour_phone, ";
-    $query .= "labour.labour_address, labour.labour_email, labour.labour_creation_date,labour.labour_image, ";
-    $query .= "categories.cat_id, categories.cat_name ";
-    $query .= "FROM labour LEFT JOIN categories ON ";
-    $query .= "labour.labour_category_id = categories.cat_id ORDER BY labour.labour_id DESC";
+   // SELECT tbl_labour.labour_id,tbl_labour_info.first_name, tbl_labour_address.labour_phone FROM tbl_labour LEFT JOIN tbl_labour_info ON ( tbl_labour_info.labour_id = tbl_labour.labour_id) LEFT JOIN tbl_labour_address ON (tbl_labour_address.labour_id = tbl_labour.labour_id)
+
+    
+   // Used with first labour table structure
+    // $query  = "SELECT tbl_labour.labour_id, labour.labour_category_id,labour.labour_first_name, ";
+    // $query .= "labour.labour_last_name, labour.labour_govt_id, labour.labour_phone, ";
+    // $query .= "labour.labour_address, labour.labour_email, labour.labour_creation_date,labour.labour_image, ";
+    // $query .= "categories.cat_id, categories.cat_name ";
+    // $query .= "FROM labour LEFT JOIN categories ON ";
+    // $query .= "labour.labour_category_id = categories.cat_id ORDER BY labour.labour_id DESC";
+
+    $query  = "SELECT tbl_labour.labour_id, tbl_labour.cat_id,tbl_labour.created_date, tbl_labour_info.first_name, ";
+    $query .= "tbl_labour_info.last_name, tbl_labour_info.labour_image, tbl_labour_address.labour_phone, ";
+    $query .= "tbl_labour_address.labour_email,tbl_category.cat_name ";
+    $query .= "FROM tbl_labour LEFT JOIN tbl_labour_info ON (tbl_labour_info.labour_id = tbl_labour.labour_id) ";
+    $query .= "LEFT JOIN tbl_labour_address ON (tbl_labour_address.labour_id = tbl_labour.labour_id)";
+    $query .= "LEFT JOIN tbl_category ON (tbl_category.cat_id = tbl_labour.cat_id)";
+
  //var_dump($query);
     $select_labours = mysqli_query($connection, $query);
     //var_dump($select_labours);
     while ($row = mysqli_fetch_assoc($select_labours)){
 
         $labour_id           = $row['labour_id'];
-        $labour_category_id  = $row['labour_category_id'];
-        $labour_first_name   = $row['labour_first_name'];
-        $labour_last_name    = $row['labour_last_name'];
-        $labour_govt_id      = $row['labour_govt_id'];
+        $labour_category_id  = $row['cat_id'];
+        $labour_date         = $row['created_date'];
+        $labour_first_name   = $row['first_name'];
+        $labour_last_name    = $row['last_name'];
         $labour_phone        = $row['labour_phone'];
-        $labour_address      = $row['labour_address'];
         $labour_email        = $row['labour_email'];
-        $labour_date         = $row['labour_creation_date'];
         $labour_image        = $row['labour_image'];
-
-        $category_id         = $row['cat_id'];
         $category_name       = $row['cat_name'];
-
         echo "<tr>";
         echo "<td>{$labour_id}</td>";
          echo "<td><img src='../IMAGES/LABOUR_IMAGES/{$labour_image}' height='40px'></td>";
@@ -50,9 +54,9 @@
         echo "<td>{$labour_last_name}</td>";
         //echo "<td class='col-sm-1'>{$post_title}</td>";
         echo "<td>{$category_name}</td>";
-        echo "<td>{$labour_govt_id}</td>";
+        //echo "<td>{$labour_govt_id}</td>";
         echo "<td>{$labour_phone}</td>";
-        echo "<td>{$labour_address}</td>";
+        //echo "<td>{$labour_address}</td>";
         echo "<td>{$labour_email}</td>";
         // $query = "SELECT * FROM comments WHERE comment_post_id = {$post_id}";
         // $select_query = mysqli_query($connection, $query);

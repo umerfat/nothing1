@@ -60,15 +60,15 @@
 
             <?php
             // $test = "select * from labour";
-            $query  = "SELECT * FROM customers";
+            $query  = "SELECT * FROM tbl_customer";
          //var_dump($query);
-            $select_customers = mysqli_query($connection, $query);
+            $select_customers = mysqli_query($connection, $query) or mysqli_error($connection);
             //var_dump($select_labours);
             while ($row = mysqli_fetch_assoc($select_customers)){
 
                 $customer_id           = $row['customer_id'];
-                $customer_first_name   = $row['customer_first_name'];
-                $customer_last_name    = $row['customer_last_name'];
+                $customer_first_name   = $row['customer_firstname'];
+                $customer_last_name    = $row['customer_lastname'];
                 $customer_phone        = $row['customer_phone'];
                 $customer_email        = $row['customer_email'];
                 $customer_image        = $row['customer_image'];
@@ -105,7 +105,7 @@
         if (isset($_GET['delete'])){
 
             $delete_customer_id = $_GET['delete'];
-            $query = "DELETE FROM customers WHERE customer_id = {$delete_customer_id}";
+            $query = "DELETE FROM tbl_customer WHERE customer_id = {$delete_customer_id}";
             $delete_query = mysqli_query($connection, $query);
 
             redirect("customers.php");

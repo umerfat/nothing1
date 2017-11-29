@@ -3401,6 +3401,7 @@ ul.project_files li a i {
 }
 .login {
     background: #F7F7F7
+    background-image:url(../IMAGES/about.jpg);
 }
 .login .fa-paw {
     font-size: 26px
@@ -4287,4 +4288,9 @@ ul.take-action{
 
 ul.take-action li{
     display: inline-block;
+}
+
+.item .col-md-6{
+    padding-top: 5px;
+    padding-bottom: 10px;
 }

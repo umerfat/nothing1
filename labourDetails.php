@@ -11,16 +11,29 @@
 
         <?php
         $connection;
-        if (isset($_GET['labour_id'])) {
-            $labour_id = $_GET['labour_id'];
+        //$labour_id = ;
+        if (isset($_GET['l_id'])) {
+            $labour_id = base64_decode($_GET['l_id']);
+            $labour_id = $labour_id -313131;
         }
-        $query_select = "SELECT * FROM labour WHERE labour_id = '$labour_id'";
-        $query_result = mysqli_query($connection,$query_select);
-        $row = mysqli_fetch_assoc($query_result);
-        $labour_id   = trim($row['labour_id']);
-        $firstName   = trim($row['labour_first_name']);
-        $lastName    = trim($row['labour_last_name']);
-        $labourImage = trim($row['labour_image']);
+        $query_details  = "SELECT tbl_labour.labour_id, tbl_labour.cat_id,tbl_labour.created_date, tbl_labour_info.first_name, ";
+        $query_details .= "tbl_labour_info.last_name, tbl_labour_info.labour_image, tbl_labour_info.labour_charges, ";
+        $query_details .= "tbl_labour_info.long_description,tbl_labour_info.short_description, ";
+        $query_details .= "tbl_labour_address.labour_email, tbl_labour_address.labour_phone, tbl_category.cat_name ";
+        $query_details .= "FROM tbl_labour LEFT JOIN tbl_labour_info ON (tbl_labour_info.labour_id = tbl_labour.labour_id) ";
+        $query_details .= "LEFT JOIN tbl_labour_address ON (tbl_labour_address.labour_id = tbl_labour.labour_id)";
+        $query_details .= "LEFT JOIN tbl_category ON (tbl_category.cat_id = tbl_labour.cat_id) WHERE tbl_labour.labour_id = $labour_id";
+        //$query_select = "SELECT * FROM labour WHERE labour_id = '$labour_id'";
+        $query_result      = mysqli_query($connection,$query_details);
+        $row               = mysqli_fetch_assoc($query_result);
+        $labour_id         = trim($row['labour_id']);
+        $firstName         = trim($row['first_name']);
+        $lastName          = trim($row['last_name']);
+        $labourImage       = trim($row['labour_image']);
+        $labour_charges    = trim($row['labour_charges']);
+        $long_description  = trim($row['long_description']);
+        $short_description = trim($row['short_description']);
+        $cat_name          = trim($row['cat_name']);
         ?>
             <div class="col-sm-6 col-xs-12 mb-60">
                 <div class="gallery-cell">
@@ -37,17 +50,17 @@
                 </span>
                 <span class="price">
                   <del>
-                    <span>Rs.1550.00</span>
+                    <span>Rs. 1550.00</span>
                   </del>
                   <ins>
-                    <span class="ammount">Rs.1250.00<?php echo $labour_id ;?></span>
+                    <span class="ammount">(&#x20B9;)<?php echo $labour_charges ;?></span>
                   </ins>
                 </span>
-                <p class="product-description">Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles.</p>
+                <p class="product-description"><?php echo $short_description ?></p>
 
                 <ul class="product-actions clearfix">
                     <li>
-                        <a href="#" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
+                        <a href="labourInfo.php" class="btn btn-color btn-lg add-to-cart left"><span>Add to Hire</span></a>
                     </li>
                 </ul>
             </div> <!-- end col product description -->
@@ -58,33 +71,33 @@
             <div class="col-md-12">
                 <div class="tabs tabs-bb">
                     <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#tab-description" data-toggle="tab">Description</a>
-                        </li>
-                        <li>
-                            <a href="#tab-info" data-toggle="tab">Information</a>
-                        </li>
-                        <li>
-                            <a href="#tab-reviews" data-toggle="tab">Reviews</a>
-                        </li>
+                    <li class="active">
+                        <a href="#tab-info" data-toggle="tab">Information</a>
+                    </li>
+                    <li>
+                        <a href="#tab-description" data-toggle="tab">Description</a>
+                    </li>
+                    <li>
+                        <a href="#tab-reviews" data-toggle="tab">Reviews</a>
+                    </li>
                     </ul> <!-- end tabs -->
 
                     <!-- tab content -->
                     <div class="tab-content">
 
-                        <div class="tab-pane fade in active" id="tab-description">
+                        <div class="tab-pane fade" id="tab-description">
                             <p>
-                                Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original.
+                                <?php echo $long_description ?>
                             </p>
                         </div>
 
-                        <div class="tab-pane fade" id="tab-info">
+                        <div class="tab-pane fade in active" id="tab-info">
                             <table class="table">
 
                                 <tbody>
                                 <tr>
                                     <th>Name</th>
-                                    <td>Louis Lane</td>
+                                    <td><?php echo $firstName." ".$lastName?></td>
                                 </tr>
                                 <tr>
                                     <th>Gender</th>
@@ -92,12 +105,12 @@
                                 </tr>
                                 <tr>
                                     <th>Category</th>
-                                    <td>Carpenter</td>
+                                    <td><?php echo $cat_name ?></td>
                                 </tr>
-                                <tr>
+                               <!--  <tr>
                                     <th>Skills</th>
                                     <td>Carpenter</td>
-                                </tr>
+                                </tr> -->
                                 </tbody>
                             </table>
                         </div>
